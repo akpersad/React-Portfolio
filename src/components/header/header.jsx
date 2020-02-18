@@ -156,12 +156,9 @@ class Header extends Component {
 									<li className="main-header__nav-item">
 										{/* Switch Toggle */}
 										<div className="switch">
+											<input id="lightSwitch" type="checkbox" name="toggle" />
+											{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
 											<label htmlFor="toggle">
-												<input
-													id="lightSwitch"
-													type="checkbox"
-													name="toggle"
-												/>
 												<i className="bulb">
 													<span className="bulb-center" />
 													<span className="filament-1" />
