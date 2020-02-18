@@ -27,7 +27,7 @@ module.exports = {
 				loaders: [
 					MiniCssExtractPlugin.loader,
 					{
-						loader: "css-loader",
+						loader: "css-loader?url=false",
 						options: {
 							sourceMap: true,
 							importLoaders: 1
@@ -43,6 +43,10 @@ module.exports = {
 					loader: "html-loader",
 					options: { minimize: true }
 				}
+			},
+			{
+				test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+				loader: "file-loader"
 			},
 			{
 				test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
