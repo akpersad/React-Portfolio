@@ -22,6 +22,10 @@ module.exports = {
 				use: ["babel-loader", "eslint-loader"]
 			},
 			{
+				test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+				loader: ["file-loader", "url-loader"]
+			},
+			{
 				test: /\.(scss|sass|css)$/,
 				exclude: /node_modules/,
 				loaders: [
@@ -29,7 +33,7 @@ module.exports = {
 					{
 						loader: "css-loader?url=false",
 						options: {
-							sourceMap: true,
+							// sourceMap: true,
 							importLoaders: 1
 						}
 					},
@@ -43,15 +47,11 @@ module.exports = {
 					loader: "html-loader",
 					options: { minimize: true }
 				}
-			},
-			{
-				test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-				loader: "file-loader"
-			},
-			{
-				test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-				loader: "url-loader"
 			}
+			// {
+			// 	test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+			// 	loader: "url-loader"
+			// }
 		]
 	},
 	resolve: {
