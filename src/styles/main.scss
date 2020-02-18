@@ -18,6 +18,12 @@
 @import "./partials/accessibility";
 @import "./partials/imported";
 
+@import "../components/header/header";
+
+body {
+    transition: $transition-time;
+}
+
 #root {
     font-family: $OpenSans;
     position: relative;
