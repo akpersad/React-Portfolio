@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { hasClass, toggleClass } from "../../global/_util";
 // import PropTypes from "prop-types";
+import Logo from "../../images/logo.svg";
 
 class Header extends Component {
 	componentDidMount() {
+		this.loadSvg();
 		const lightSwitch = document.querySelector("#lightSwitch");
 		const mainHeader = document.querySelector(".js-main-header");
 		// Theme switch
@@ -64,6 +66,53 @@ class Header extends Component {
 		}
 	}
 
+	loadSvg() {
+		document.querySelectorAll("#logo-comp").forEach(function(img) {
+			const imgID = img.id;
+			const imgClass = img.className;
+			const imgURL = img.src;
+
+			fetch(imgURL)
+				.then(function(response) {
+					return response.text();
+				})
+				.then(function(text) {
+					const parser = new DOMParser();
+					const xmlDoc = parser.parseFromString(text, "text/xml");
+
+					// Get the SVG tag, ignore the rest
+					const svg = xmlDoc.getElementsByTagName("svg")[0];
+
+					// Add replaced image's ID to the new SVG
+					if (typeof imgID !== "undefined") {
+						svg.setAttribute("id", imgID);
+					}
+					// Add replaced image's classes to the new SVG
+					if (typeof imgClass !== "undefined") {
+						svg.setAttribute("class", `${imgClass} replaced-svg`);
+					}
+
+					// Remove any invalid XML tags as per http://validator.w3.org
+					svg.removeAttribute("xmlns:a");
+
+					// Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+					if (
+						!svg.getAttribute("viewBox") &&
+						svg.getAttribute("height") &&
+						svg.getAttribute("width")
+					) {
+						svg.setAttribute(
+							"viewBox",
+							`0 0 ${svg.getAttribute("height")} ${svg.getAttribute("width")}`
+						);
+					}
+
+					// Replace image with new SVG
+					img.parentNode.replaceChild(svg, img);
+				});
+		});
+	}
+
 	render() {
 		return (
 			<div className="main-header-container">
@@ -71,6 +120,7 @@ class Header extends Component {
 				<header className="main-header js-main-header margin-top--sm margin-bottom--lg">
 					<div className="container container--lg">
 						<div className="main-header__layout">
+							<img id="logo-comp" src={Logo} alt="Logo" />
 							<div className="main-header__logo">
 								<a href="#0">
 									<svg width="130" height="32" viewBox="0 0 130 32">
