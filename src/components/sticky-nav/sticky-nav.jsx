@@ -3,9 +3,7 @@ import React, { Component } from "react";
 import { addClass, removeClass } from "../../global/_util";
 
 class StickyNav extends Component {
-	constructor(props) {
-		super(props);
-
+	componentDidMount() {
 		const sections = document
 			.querySelector(".sections")
 			.querySelectorAll("section.section-parts");
@@ -17,39 +15,8 @@ class StickyNav extends Component {
 		this.nav = nav;
 		this.navHeight = navHeight;
 		this.navTop = navTop;
-	}
 
-	componentDidMount() {
-		const stickykNav = () => {
-			if (window.pageYOffset >= this.navTop) {
-				addClass(this.nav, "position-fixed");
-			} else {
-				removeClass(this.nav, "position-fixed");
-			}
-		};
-
-		window.addEventListener("scroll", function(event) {
-			const curPos = this.pageYOffset;
-			const len = this.sections.length;
-			stickykNav();
-			for (let i = 0; i < len; i++) {
-				const top = this.sections[i].offsetTop - this.navHeight;
-				const bottom = top + this.sections[i].offsetHeight;
-				const anchorTags = this.nav.querySelectorAll("a");
-
-				if (curPos >= top && curPos <= bottom) {
-					for (let j = 0; j < anchorTags.length; j++) {
-						removeClass(anchorTags[j], "active");
-					}
-					const temp1 = `a.${this.sections[i].id}`;
-					addClass(document.querySelector(temp1), "active");
-				} else if (this.isScrolledBottom()) {
-					removeClass(anchorTags[len - 2], "active");
-					const temp2 = `a.${this.sections[len - 1].id}`;
-					addClass(document.querySelector(temp2), "active");
-				}
-			}
-		});
+		window.addEventListener("scroll", this.listenScrollEvent.bind(this));
 	}
 
 	isScrolledBottom() {
@@ -65,6 +32,38 @@ class StickyNav extends Component {
 			return true;
 		}
 		return false;
+	}
+
+	stickykNav() {
+		if (window.pageYOffset >= this.navTop) {
+			addClass(this.nav, "position-fixed");
+		} else {
+			removeClass(this.nav, "position-fixed");
+		}
+	}
+
+	listenScrollEvent() {
+		const curPos = window.pageYOffset;
+		const len = this.sections.length;
+
+		this.stickykNav();
+		for (let i = 0; i < len; i++) {
+			const top = this.sections[i].offsetTop - this.navHeight;
+			const bottom = top + this.sections[i].offsetHeight;
+			const anchorTags = this.nav.querySelectorAll("a");
+
+			if (curPos >= top && curPos <= bottom) {
+				for (let j = 0; j < anchorTags.length; j++) {
+					removeClass(anchorTags[j], "active");
+				}
+				const temp1 = `a.${this.sections[i].id}`;
+				addClass(document.querySelector(temp1), "active");
+			} else if (this.isScrolledBottom()) {
+				removeClass(anchorTags[len - 2], "active");
+				const temp2 = `a.${this.sections[len - 1].id}`;
+				addClass(document.querySelector(temp2), "active");
+			}
+		}
 	}
 
 	/* exported scrollToElement */

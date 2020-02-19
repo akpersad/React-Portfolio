@@ -20,6 +20,36 @@ class App extends Component {
 					<div id="sticky-nav">
 						<StickyNav />
 					</div>
+
+					<div className="sections">
+						<section className="section-parts" id="one">
+							Hello
+						</section>
+					</div>
+
+					<div className="sections">
+						<section className="section-parts" id="two">
+							Hello
+						</section>
+					</div>
+
+					<div className="sections">
+						<section className="section-parts" id="three">
+							Hello
+						</section>
+					</div>
+
+					<div className="sections">
+						<section className="section-parts" id="four">
+							Hello
+						</section>
+					</div>
+
+					<div className="sections">
+						<section className="section-parts" id="five">
+							Hello
+						</section>
+					</div>
 				</div>
 			</>
 		);
