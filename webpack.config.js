@@ -22,18 +22,14 @@ module.exports = {
 				use: ["babel-loader", "eslint-loader"]
 			},
 			{
-				test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-				loader: ["file-loader", "url-loader"]
-			},
-			{
 				test: /\.(scss|sass|css)$/,
 				exclude: /node_modules/,
 				loaders: [
 					MiniCssExtractPlugin.loader,
 					{
-						loader: "css-loader?url=false",
+						loader: "css-loader",
 						options: {
-							// sourceMap: true,
+							sourceMap: true,
 							importLoaders: 1
 						}
 					},

@@ -1,6 +1,13 @@
 import React, { Component } from "react";
+import BackgroundImage from "../../images/desktop.png";
 
 class WelcomeComponent extends Component {
+	componentDidMount() {
+		document.querySelector(
+			".welcome-comp-container"
+		).style.backgroundImage = `url(${BackgroundImage})`;
+	}
+
 	render() {
 		return (
 			<div className="welcome-comp-container">
