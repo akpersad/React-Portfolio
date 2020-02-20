@@ -4,9 +4,7 @@ import { addClass, removeClass } from "../../global/_util";
 
 class StickyNav extends Component {
 	componentDidMount() {
-		const sections = document
-			.querySelector(".sections")
-			.querySelectorAll("section.section-parts");
+		const sections = document.querySelectorAll("section.section-parts");
 		const nav = document.querySelector("#sticky-nav_nav");
 		const navHeight = nav.offsetHeight;
 		const navTop = nav.offsetTop;
@@ -20,7 +18,7 @@ class StickyNav extends Component {
 	}
 
 	isScrolledBottom() {
-		const pageHeight = document.documentElement.offsetHeight;
+		const pageHeight = document.querySelector("#root").offsetHeight;
 		const windowHeight = window.innerHeight;
 		const scrollPosition =
 			window.scrollY ||
@@ -54,6 +52,7 @@ class StickyNav extends Component {
 
 			if (curPos >= top && curPos <= bottom) {
 				for (let j = 0; j < anchorTags.length; j++) {
+					// console.log(anchorTags[j]);
 					removeClass(anchorTags[j], "active");
 				}
 				const temp1 = `a.${this.sections[i].id}`;
@@ -67,8 +66,9 @@ class StickyNav extends Component {
 	}
 
 	/* exported scrollToElement */
-	scrollToElement(targetElement) {
-		const elementId = targetElement.getAttribute("data-scrollTo");
+	scrollToElement(event) {
+		const targetElement = event.target;
+		const elementId = targetElement.getAttribute("data-scrollto");
 		const element = document.querySelector(`#${elementId}`);
 		const bodyRect = document.body.getBoundingClientRect().top;
 		const elementRect = element.getBoundingClientRect().top;
@@ -90,27 +90,52 @@ class StickyNav extends Component {
 				<nav id="sticky-nav_nav">
 					<ul>
 						<li>
-							<a className="one" href="#/" data-scrollTo="one">
+							<a
+								className="one"
+								onClick={this.scrollToElement.bind(this)}
+								href="#/"
+								data-scrollto="one"
+							>
 								First
 							</a>
 						</li>
 						<li>
-							<a className="two" href="#/" data-scrollTo="two">
+							<a
+								className="two"
+								onClick={this.scrollToElement.bind(this)}
+								href="#/"
+								data-scrollto="two"
+							>
 								Second
 							</a>
 						</li>
 						<li>
-							<a className="three" href="#/" data-scrollTo="three">
+							<a
+								className="three"
+								onClick={this.scrollToElement.bind(this)}
+								href="#/"
+								data-scrollto="three"
+							>
 								Third
 							</a>
 						</li>
 						<li>
-							<a className="four" href="#/" data-scrollTo="four">
+							<a
+								className="four"
+								onClick={this.scrollToElement.bind(this)}
+								href="#/"
+								data-scrollto="four"
+							>
 								Fourth
 							</a>
 						</li>
 						<li>
-							<a className="five" href="#/" data-scrollTo="five">
+							<a
+								className="five"
+								onClick={this.scrollToElement.bind(this)}
+								href="#/"
+								data-scrollto="five"
+							>
 								Fifth
 							</a>
 						</li>
