@@ -61,6 +61,7 @@ class Projects extends Component {
 				>
 					<div className="parallelogram-section">
 						{/* On load size */}
+						<div className="onload-size_text">DY</div>
 						{/* End On load size */}
 
 						{/* Large Size */}
@@ -79,6 +80,7 @@ class Projects extends Component {
 				>
 					<div className="parallelogram-section">
 						{/* On load size */}
+						<div className="onload-size_text">Salesforce</div>
 						{/* End On load size */}
 
 						{/* Large Size */}

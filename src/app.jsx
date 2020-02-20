@@ -24,7 +24,7 @@ class App extends Component {
 
 					<div className="sections">
 						<section className="section-parts" id="one">
-							<div id="projects">
+							<div className="h-100" id="projects">
 								<Projects />
 							</div>
 						</section>
