@@ -37,10 +37,8 @@ class WelcomeComponent extends Component {
 					.json()
 					.then(jsonResults => {
 						this.setState({ quote: jsonResults.contents.quotes[0].quote });
-						window.localStorage.setItem({
-							quote: jsonResults.contents.quotes[0].quote,
-							quoteDate: new Date()
-						});
+						window.localStorage.setItem("quote", jsonResults.contents.quotes[0].quote);
+						window.localStorage.setItem("quoteDate", new Date());
 					})
 					.catch(err => {
 						console.log(err);
