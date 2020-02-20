@@ -165,7 +165,7 @@ class Header extends Component {
 								<ul className="main-header__nav-list">
 									<li className="main-header__nav-item nav-item_display-web-only">
 										<a
-											data-scrollTo="test1234"
+											data-scrollto="test1234"
 											href="#0"
 											className="main-header__nav-link"
 											aria-current="page"
@@ -176,7 +176,7 @@ class Header extends Component {
 									</li>
 									<li className="main-header__nav-item nav-item_display-web-only">
 										<a
-											data-scrollTo="test12345"
+											data-scrollto="test12345"
 											href="#0"
 											className="main-header__nav-link"
 											// onclick="scrollToElement(this)"
@@ -186,7 +186,7 @@ class Header extends Component {
 									</li>
 									<li className="main-header__nav-item nav-item_display-web-only">
 										<a
-											data-scrollTo="test123456"
+											data-scrollto="test123456"
 											href="#0"
 											className="main-header__nav-link"
 											// onclick="scrollToElement(this)"
