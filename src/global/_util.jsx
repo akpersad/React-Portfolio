@@ -5,7 +5,7 @@ export const getAllChildrenNodes = (element = document.body) => {
 // Inputs: Integer, Integer, HTML ELement, Integer, Function
 export const setHeight = (start, to, element, duration, cb) => {
 	if (start == null || to == null || element == null || duration == null || cb == null) {
-		console.warn("Inputs: Integer, Integer, HTML Element, Integer, Function");
+		console.warn("setHeight; Inputs: Integer, Integer, HTML Element, Integer, Function");
 	} else {
 		const change = to - start;
 		let currentTime;
@@ -40,7 +40,9 @@ export const getIndexInArray = (array, el) => {
 // Inputs: HTML ELement, Object
 export const setAttributes = (el, attrs) => {
 	if (el == null || attrs == null) {
-		console.warn("Make sure el (HTML Element) and attrs (Object {} ) are passed!");
+		console.warn(
+			"setAttributes; Make sure el (HTML Element) and attrs (Object {} ) are passed!"
+		);
 	} else {
 		for (const key in attrs) {
 			if (attrs[key]) {
@@ -53,7 +55,7 @@ export const setAttributes = (el, attrs) => {
 // Inputs: HTML ELement, String
 export const hasClass = (el, className) => {
 	if (el == null || className == null) {
-		console.warn("Make sure el (HTML Element) and className (string) are passed!");
+		console.warn("hasClass; Make sure el (HTML Element) and className (string) are passed!");
 	} else {
 		if (el.classList) {
 			return el.classList.contains(className);
@@ -66,7 +68,7 @@ export const hasClass = (el, className) => {
 // Inputs: HTML ELement, String
 export const addClass = (el, className) => {
 	if (el == null || className == null) {
-		console.warn("Make sure el (HTML Element) and className (string) are passed!");
+		console.warn("addClass; Make sure el (HTML Element) and className (string) are passed!");
 	} else {
 		const classList = className.split(" ");
 		if (el.classList) {
@@ -83,7 +85,7 @@ export const addClass = (el, className) => {
 // Inputs: HTML ELement, String
 export const removeClass = (el, className) => {
 	if (el == null || className == null) {
-		console.warn("Make sure el (HTML Element) and className (string) are passed!");
+		console.warn("removeClass; Make sure el (HTML Element) and className (string) are passed!");
 	} else {
 		const classList = className.split(" ");
 		if (el.classList) {
@@ -101,7 +103,7 @@ export const removeClass = (el, className) => {
 export const swapClasses = (el, classNameToAdd, classNameToRemove) => {
 	if (el == null || classNameToAdd == null || classNameToRemove == null) {
 		console.warn(
-			"Make sure el (HTML Element) and classNameToAdd / classNameToRemove (string) are passed!"
+			"swapClasses; Make sure el (HTML Element) and classNameToAdd / classNameToRemove (string) are passed!"
 		);
 	} else {
 		addClass(el, classNameToAdd);
@@ -112,7 +114,7 @@ export const swapClasses = (el, classNameToAdd, classNameToRemove) => {
 // Inputs: HTML ELement, String, Boolean
 export const toggleClass = (el, className, bool) => {
 	if (el == null || className == null) {
-		console.warn("Make sure el (HTML Element) and className (string) are passed!");
+		console.warn("toggleClass; Make sure el (HTML Element) and className (string) are passed!");
 	} else if (bool) {
 		addClass(el, className);
 	} else {
@@ -124,7 +126,9 @@ export const toggleClass = (el, className, bool) => {
 export const getChildrenByClassName = (el, className) => {
 	const childrenByClass = [];
 	if (el == null || className == null) {
-		console.warn("Make sure el (HTML Element) and className (string) are passed!");
+		console.warn(
+			"getChildrenByClassName; Make sure el (HTML Element) and className (string) are passed!"
+		);
 	} else {
 		for (let i = 0; i < el.children.length; i++) {
 			if (hasClass(el.children[i], className)) {
