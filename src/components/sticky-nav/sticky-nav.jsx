@@ -52,7 +52,6 @@ class StickyNav extends Component {
 
 			if (curPos >= top && curPos <= bottom) {
 				for (let j = 0; j < anchorTags.length; j++) {
-					// console.log(anchorTags[j]);
 					removeClass(anchorTags[j], "active");
 				}
 				const temp1 = `a.${this.sections[i].id}`;

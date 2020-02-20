@@ -46,6 +46,7 @@ class Projects extends Component {
 						{/* End On load size */}
 
 						{/* Large Size */}
+						<div className="large-size_text">Bose</div>
 						{/* End Large Size */}
 
 						{/* Small Size */}
@@ -65,6 +66,7 @@ class Projects extends Component {
 						{/* End On load size */}
 
 						{/* Large Size */}
+						<div className="large-size_text">DY</div>
 						{/* End Large Size */}
 
 						{/* Small Size */}
@@ -84,6 +86,7 @@ class Projects extends Component {
 						{/* End On load size */}
 
 						{/* Large Size */}
+						<div className="large-size_text">Salesforce</div>
 						{/* End Large Size */}
 
 						{/* Small Size */}

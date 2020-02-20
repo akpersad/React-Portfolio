@@ -31,7 +31,8 @@
                         transition: 1s;
                     }
                 }
-                .onload-size_text {
+                .onload-size_text,
+                .large-size_text {
                     display: none !important;
                 }
                 @include breakpoint(sm-only) {
@@ -44,6 +45,10 @@
                 .onload-size_text {
                     display: none !important;
                 }
+                .large-size_text {
+                    display: block !important;
+                    color: var(--color-contrast-low);
+                }
                 @include breakpoint(sm-only) {
                     height: 70%;
                     width: 100% !important;
@@ -54,7 +59,8 @@
                 .onload-size_text {
                     display: block;
                 }
-                .smaller-size_text {
+                .smaller-size_text,
+                .large-size_text {
                     display: none;
                     transition: 1s;
                 }
