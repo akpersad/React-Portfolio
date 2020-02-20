@@ -20,7 +20,8 @@
 
 @import "../components/header/header";
 @import "../components/welcome-component/welcome-component";
-@import "../components/sticky-nav/sticky-nav.scss";
+@import "../components/sticky-nav/sticky-nav";
+@import "../components/projects/projects";
 
 body {
     transition: $transition-time;
