@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Header from "./components/header/header";
 import MainComp from "./components/welcome-component/welcome-component";
 import StickyNav from "./components/sticky-nav/sticky-nav";
-import Projects from "./components/projects/projects";
+import Shapes from "./components/shapes/shapes";
 
 class App extends Component {
 	render() {
@@ -24,8 +24,8 @@ class App extends Component {
 
 					<div className="sections">
 						<section className="section-parts" id="one">
-							<div className="h-100" id="projects">
-								<Projects />
+							<div className="h-100" id="shapes">
+								<Shapes />
 							</div>
 						</section>
 					</div>
