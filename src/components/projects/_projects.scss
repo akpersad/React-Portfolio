@@ -27,7 +27,8 @@
     height: 100%;
     margin: auto;
     .react-modal {
-        padding-top: 25%;
+        position: relative;
+        top: 25%;
         &:focus {
             outline: none;
         }

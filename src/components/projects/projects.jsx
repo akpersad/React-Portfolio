@@ -15,6 +15,22 @@ class Projects extends Component {
 		Modal.setAppElement("#projects");
 	}
 
+	projectRender() {
+		const projectNames = ["Wedding Wedbsite", "Gulp Portfolio", "React Portfolio"];
+		return projectNames.map(item => {
+			return (
+				<button
+					type="button"
+					className="project-item"
+					onClick={this.projectClick.bind(this)}
+				>
+					<div className="project-item_image">Image Box</div>
+					<div className="project-item_text">{item}</div>
+				</button>
+			);
+		});
+	}
+
 	projectClick(event) {
 		console.log(event.target.classList[0]);
 		this.setState({ showModal: true });
@@ -28,32 +44,7 @@ class Projects extends Component {
 		const { showModal } = this.state;
 		return (
 			<div className="projects-comp">
-				<div className="projects-demos">
-					<button
-						type="button"
-						className="project-item"
-						onClick={this.projectClick.bind(this)}
-					>
-						<div className="project-item_image">Image Box</div>
-						<div className="project-item_text">Image Text</div>
-					</button>
-					<button
-						type="button"
-						className="project-item"
-						onClick={this.projectClick.bind(this)}
-					>
-						<div className="project-item_image">Image Box</div>
-						<div className="project-item_text">Image Text</div>
-					</button>
-					<button
-						type="button"
-						className="project-item"
-						onClick={this.projectClick.bind(this)}
-					>
-						<div className="project-item_image">Image Box</div>
-						<div className="project-item_text">Image Text</div>
-					</button>
-				</div>
+				<div className="projects-demos">{this.projectRender()}</div>
 
 				<Modal
 					isOpen={showModal}
