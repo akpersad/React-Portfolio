@@ -58,7 +58,7 @@ class Projects extends Component {
 				<Modal
 					isOpen={showModal}
 					onRequestClose={this.closeModal}
-					className="Modal"
+					className="react-modal"
 					overlayClassName="modal-overlay"
 					contentLabel="Example Modal"
 				>
@@ -71,6 +71,7 @@ class Projects extends Component {
 									className="close"
 									data-dismiss="modal"
 									aria-label="Close"
+									onClick={this.closeModal.bind(this)}
 								>
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -79,13 +80,11 @@ class Projects extends Component {
 								<p>Modal body text goes here.</p>
 							</div>
 							<div className="modal-footer">
-								<button type="button" className="btn btn-primary">
-									Save changes
-								</button>
 								<button
 									type="button"
 									className="btn btn-secondary"
 									data-dismiss="modal"
+									onClick={this.closeModal.bind(this)}
 								>
 									Close
 								</button>
