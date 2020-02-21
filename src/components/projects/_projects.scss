@@ -1,0 +1,33 @@
+#projects {
+    .projects-comp {
+        .projects-demos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .project-item {
+                &_image {
+                    color: var(--color-contrast-lower);
+                    background-image: url(https://loremflickr.com/200/200);
+                    height: 200px;
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.modal-overlay {
+    background-color: rgba($color: $black, $alpha: 0.5);
+    position: fixed;
+    top: 25%;
+    left: 0;
+    right: 0;
+    z-index: 100000000;
+    width: 75%;
+    height: 400px;
+    margin: auto;
+}
+
+#two {
+    background-color: $bisque;
+}

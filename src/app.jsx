@@ -6,6 +6,7 @@ import Header from "./components/header/header";
 import MainComp from "./components/welcome-component/welcome-component";
 import StickyNav from "./components/sticky-nav/sticky-nav";
 import Shapes from "./components/shapes/shapes";
+import Projects from "./components/projects/projects";
 
 class App extends Component {
 	render() {
@@ -32,7 +33,9 @@ class App extends Component {
 
 					<div className="sections">
 						<section className="section-parts" id="two">
-							Hello
+							<div id="projects">
+								<Projects />
+							</div>
 						</section>
 					</div>
 
