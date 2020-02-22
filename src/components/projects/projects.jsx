@@ -22,6 +22,7 @@ class Projects extends Component {
 				<button
 					type="button"
 					className="project-item"
+					key={item}
 					onClick={this.projectClick.bind(this)}
 				>
 					<div className="project-item_image">Image Box</div>
@@ -48,7 +49,8 @@ class Projects extends Component {
 
 				<Modal
 					isOpen={showModal}
-					onRequestClose={this.closeModal}
+					// eslint-disable-next-line react/jsx-no-bind
+					onRequestClose={this.closeModal.bind(this)}
 					className="react-modal"
 					overlayClassName="modal-overlay"
 					contentLabel="Example Modal"

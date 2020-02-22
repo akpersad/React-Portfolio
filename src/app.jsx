@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./styles/main.scss";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
+import Favicon from "react-favicon";
+import FaviconImage from "./images/logo.svg";
+
 import Header from "./components/header/header";
 import MainComp from "./components/welcome-component/welcome-component";
 import StickyNav from "./components/sticky-nav/sticky-nav";
@@ -12,6 +15,7 @@ class App extends Component {
 	render() {
 		return (
 			<>
+				<Favicon url={FaviconImage} />
 				<div id="main-header">
 					<Header />
 				</div>
