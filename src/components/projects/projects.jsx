@@ -7,7 +7,35 @@ class Projects extends Component {
 		super(props);
 
 		this.state = {
-			showModal: false
+			showModal: false,
+			projects: [
+				{
+					"Wedding Website": {
+						projectName: "Wedding Website",
+						projectUrl: "google.com",
+						projectDesc: "BLAH BLAH BLAH"
+					}
+				},
+				{
+					"Gulp Portfolio": {
+						projectName: "Gulp Portfolio",
+						projectUrl: "google.com",
+						projectDesc: "BLAH BLAH BLAH"
+					}
+				},
+				{
+					"React Portfolio": {
+						projectName: "React Portfolio",
+						projectUrl: "google.com",
+						projectDesc: "BLAH BLAH BLAH"
+					}
+				}
+			],
+			modalInfo: {
+				modalTitle: "modalTitle",
+				modalBody: "modalBody",
+				modalUrl: "modalUrl"
+			}
 		};
 	}
 
@@ -16,12 +44,16 @@ class Projects extends Component {
 	}
 
 	projectRender() {
-		const projectNames = ["Wedding Wedbsite", "Gulp Portfolio", "React Portfolio"];
+		const { projects } = this.state;
+		const projectNames = projects.map(item => {
+			return Object.keys(item)[0];
+		});
 		return projectNames.map(item => {
 			return (
 				<button
 					type="button"
 					className="project-item"
+					data-projectname={item}
 					key={item}
 					onClick={this.projectClick.bind(this)}
 				>
@@ -33,7 +65,31 @@ class Projects extends Component {
 	}
 
 	projectClick(event) {
-		console.log(event.target.classList[0]);
+		const { projects } = this.state;
+		let clickedElement = event.target;
+		while (clickedElement.tagName !== "BUTTON") {
+			clickedElement = clickedElement.parentElement;
+		}
+
+		const whichModal = clickedElement.getAttribute("data-projectname");
+		const modalInformation = projects.map(item => {
+			if (Object.keys(item)[0] === whichModal) {
+				return item[Object.keys(item)[0]];
+			}
+			return null;
+		});
+
+		const filtered = modalInformation.filter(function(el) {
+			return el !== null;
+		});
+
+		this.setState({
+			modalInfo: {
+				modalTitle: filtered[0].projectName,
+				modalBody: filtered[0].projectDesc,
+				modalUrl: filtered[0].projectUrl
+			}
+		});
 		this.setState({ showModal: true });
 	}
 
@@ -43,6 +99,7 @@ class Projects extends Component {
 
 	render() {
 		const { showModal } = this.state;
+		const { modalInfo } = this.state;
 		return (
 			<div className="projects-comp">
 				<div className="projects-demos">{this.projectRender()}</div>
@@ -58,7 +115,7 @@ class Projects extends Component {
 					<div className="modal-dialog" role="document">
 						<div className="modal-content">
 							<div className="modal-header">
-								<h5 className="modal-title">Modal title</h5>
+								<h5 className="modal-title">{modalInfo.modalTitle}</h5>
 								<button
 									type="button"
 									className="close"
@@ -70,7 +127,7 @@ class Projects extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								<p>Modal body text goes here.</p>
+								<p>{modalInfo.modalBody}</p>
 							</div>
 							<div className="modal-footer">
 								<button
