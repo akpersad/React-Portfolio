@@ -19,6 +19,10 @@
 @import "./partials/imported";
 
 @import "../components/header/header";
+@import "../components/welcome-component/welcome-component";
+@import "../components/sticky-nav/sticky-nav";
+@import "../components/projects/projects";
+@import "../components/shapes/shapes";
 
 body {
     transition: $transition-time;
