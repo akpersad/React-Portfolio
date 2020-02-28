@@ -19,36 +19,39 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
-	nodeMailer.createTestAccount().then(resp => {
-		console.log("Creds", resp);
-		const transporter = nodeMailer.createTransport({
-			host: "smtp.ethereal.email",
-			port: 587,
-			secure: false, // true for 465, false for other ports
-			auth: {
-				user: resp.user, // generated ethereal user
-				pass: resp.pass // generated ethereal password
-			}
-		});
-
-		transporter
-			.sendMail({
-				from: resp.user,
-				to: "apersad718+nodeMailerTest@gmail.com", // list of receivers
-				subject: "Hello ✔", // Subject line
-				text: "Hello world?", // plain text body
-				html: "<b>Hello world?</b>" // html body
-			})
-			.then(response => {
-				console.log("Email Response", response);
-				res.json({
-					response: response.response
-				});
-			})
-			.catch(err => {
-				console.log("EMAIL Error", err);
-			});
+	const transporter = nodeMailer.createTransport({
+		host: "smtp.mail.yahoo.com",
+		port: 465,
+		service: "yahoo",
+		secure: true, // true for 465, false for other ports
+		auth: {
+			user: process.env.EMAIL, // generated ethereal user
+			pass: process.env.PASSWORD // generated ethereal password
+		},
+		debug: false,
+		logger: true
 	});
+
+	console.log("AUTH TOOKEN", process.env.EMAIL, process.env.PASSWORD);
+
+	transporter
+		.sendMail({
+			from: process.env.EMAIL,
+			to: "apersad718+nodeMailerTest@gmail.com", // list of receivers
+			subject: "Portfolio Contact", // Subject line
+			text: "Hello world?", // plain text body
+			html: "<b>Hello world?</b>" // html body
+		})
+		.then(response => {
+			console.log("Email Response", response);
+			res.json({
+				response: response.response
+			});
+		})
+		.catch(err => {
+			console.log("EMAIL Error", err);
+			res.end();
+		});
 });
 
 app.listen(port, function() {
