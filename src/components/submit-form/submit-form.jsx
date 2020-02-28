@@ -1,28 +1,30 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class SubmitForm extends Component {
-	sendEmail() {
+	sendEmail(e) {
+		e.preventDefault();
 		const name = "Andrwew";
 		const email = "aa@a.com";
 		const message = "Messanger22234";
-		fetch("/send", {
-			method: "POST",
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify({
+
+		axios
+			.post("/", {
 				name,
 				email,
 				message
 			})
-		})
-			.then(res => res.json())
-			.then(res => {
-				console.log("here is the response: ", res);
-			})
+			.then(
+				response => {
+					console.log("AndrewResponse", response);
+				},
+				error => {
+					debugger;
+					console.log("Andrew error", error);
+				}
+			)
 			.catch(err => {
-				console.error("here is the error: ", err);
+				console.log("AS SUPER Error", err);
 			});
 	}
 

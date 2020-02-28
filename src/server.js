@@ -1,37 +1,27 @@
-import express from "express";
-import nodemailer from "nodemailer";
+const port = process.env.PORT || 3000;
+const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
 
-// "build": "./node_modules/.bin/webpack -p --mode production",
-// "start": "webpack -p --mode production --watch & ./node_modules/.bin/webpack-dev-server --open --config ./webpack.config.js --mode development",
-
 app.use(express.static("dist"));
+app.use(express.json());
+app.set("view engine", "jsx");
 
-app.post("/send", function(req, res, next) {
-	const transporter = nodemailer.createTransport({
-		service: "gmail",
-		auth: {
-			user: "test-email@gmail.com",
-			pass: "test123"
-		}
-	});
+app.engine("jsx", require("express-react-views").createEngine());
 
-	const mailOptions = {
-		from: `${req.body.email}`,
-		to: "apersad718@gmail.com",
-		subject: `${req.body.name}`,
-		text: `${req.body.message}`,
-		replyTo: `${req.body.email}`
-	};
+app.use(bodyParser.urlencoded({ extended: true }));
 
-	transporter.sendMail(mailOptions, function(err, res1) {
-		if (err) {
-			console.error("there was an error: ", err);
-		} else {
-			console.log("here is the res: ", res);
-		}
-	});
+app.get("/", function(req, res) {
+	res.render("index", { weather: null, error: null });
 });
 
-app.listen(3000, () => console.log("Example app listening on port 3000!"));
+app.post("/", function(req, res, err) {
+	console.log("BODYER1", req.body);
+
+	res.json({ hello: "woorld" });
+});
+
+app.listen(port, function() {
+	console.log(`Example app listening on port ${port}!`);
+});
