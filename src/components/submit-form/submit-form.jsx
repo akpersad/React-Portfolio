@@ -2,11 +2,19 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class SubmitForm extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			name: "Andrwew",
+			email: "aa@a.com",
+			message: "Messanger22234"
+		};
+	}
+
 	sendEmail(e) {
 		e.preventDefault();
-		const name = "Andrwew";
-		const email = "aa@a.com";
-		const message = "Messanger22234";
+		const { name, email, message } = this.state;
 
 		axios
 			.post("/", {
@@ -19,7 +27,6 @@ class SubmitForm extends Component {
 					console.log("AndrewResponse", response);
 				},
 				error => {
-					debugger;
 					console.log("Andrew error", error);
 				}
 			)
@@ -30,7 +37,12 @@ class SubmitForm extends Component {
 
 	render() {
 		return (
-			<form id="contact-form" onSubmit={this.sendEmail} method="POST" action="/send">
+			<form
+				id="contact-form"
+				onSubmit={this.sendEmail.bind(this)}
+				method="POST"
+				action="/send"
+			>
 				<div className="form-group">
 					<label htmlFor="name">
 						Name
