@@ -19,28 +19,45 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
+	const { body } = req;
 	const transporter = nodeMailer.createTransport({
 		host: "smtp.mail.yahoo.com",
 		port: 465,
 		service: "yahoo",
-		secure: true, // true for 465, false for other ports
+		secure: true,
 		auth: {
-			user: process.env.EMAIL, // generated ethereal user
-			pass: process.env.PASSWORD // generated ethereal password
+			user: process.env.EMAIL,
+			pass: process.env.PASSWORD
 		},
 		debug: false,
 		logger: true
 	});
 
-	console.log("AUTH TOOKEN", process.env.EMAIL, process.env.PASSWORD);
+	const emailBodyHTML = `<div>
+			<h4>Dear Andrew,</h4><br/>
+			<p>You've recieved an email from the submission contact form on your portfolio.</p><br/>
+			<p>Below is the information:</p><br/><br/>
+			<p>Name: ${body.name}</p><br/>
+			<p>Email: ${body.email}</p><br/>
+			<p>Message: ${body.message}</p><br/><br/>
+			<p>Cheers,</p><br/>
+			<p>Yourself!</p>
+		</div>`;
+
+	const emailBodyPlain = `Dear Andrew,
+			You've recieved an email from the submission contact form on your portfolio.
+			Below is the information:
+			Name: ${body.name};
+			Email: ${body.email};
+			Message: ${body.message};`;
 
 	transporter
 		.sendMail({
 			from: process.env.EMAIL,
-			to: "apersad718+nodeMailerTest@gmail.com", // list of receivers
+			to: process.env.EMAILTO, // list of receivers
 			subject: "Portfolio Contact", // Subject line
-			text: "Hello world?", // plain text body
-			html: "<b>Hello world?</b>" // html body
+			text: emailBodyPlain, // plain text body
+			html: emailBodyHTML // html body
 		})
 		.then(response => {
 			console.log("Email Response", response);
