@@ -6,9 +6,9 @@ class SubmitForm extends Component {
 		super();
 
 		this.state = {
-			name: null,
-			email: null,
-			message: null,
+			name: "",
+			email: "",
+			message: "",
 			showNameError: false,
 			showEmailError: false,
 			showMailError: false,
@@ -21,14 +21,14 @@ class SubmitForm extends Component {
 	}
 
 	validateForm(event) {
-		console.log("SURE");
-		const { showNameError, showEmailError, showMailError } = this.state;
-		const stateArray = [showNameError, showEmailError, showMailError];
+		const stateArray = ["showNameError", "showEmailError", "showMailError"];
 		let tempCounter = 0;
 
 		for (let i = 0; i < event.currentTarget.length; i++) {
 			if (event.currentTarget[i].value === "") {
-				this.setState(stateArray[i], true);
+				const obj = {};
+				obj[stateArray[i]] = true;
+				this.setState(obj);
 				tempCounter += 1;
 			}
 		}
@@ -44,9 +44,7 @@ class SubmitForm extends Component {
 		const { name, email, message } = this.state;
 		const postBody = { name, email, message };
 
-		console.log("TESTER", this.validateForm(event));
-
-		if (false) {
+		if (this.validateForm(event)) {
 			axios
 				.post("/", postBody)
 				.then(
@@ -81,7 +79,9 @@ class SubmitForm extends Component {
 						Name
 						<input type="text" className="form-control" id="name" value={name} />
 					</label>
-					{showNameError && <span>{errors.name}</span>}
+					{showNameError && (
+						<span className="d-block text-danger text-size_small">{errors.name}</span>
+					)}
 				</div>
 				<div className="form-group">
 					<label htmlFor="exampleInputEmail1">
@@ -94,14 +94,18 @@ class SubmitForm extends Component {
 							aria-describedby="emailHelp"
 						/>
 					</label>
-					{showEmailError && <span>{errors.name}</span>}
+					{showEmailError && (
+						<span className="d-block text-danger text-size_small">{errors.name}</span>
+					)}
 				</div>
 				<div className="form-group">
 					<label htmlFor="message">
 						Message
 						<textarea className="form-control" rows="5" id="message" value={message} />
 					</label>
-					{showMailError && <span>{errors.name}</span>}
+					{showMailError && (
+						<span className="d-block text-danger text-size_small">{errors.name}</span>
+					)}
 				</div>
 				<button type="submit" className="btn btn-primary">
 					Submit

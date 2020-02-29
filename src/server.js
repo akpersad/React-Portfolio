@@ -34,13 +34,13 @@ app.post("/", function(req, res) {
 	});
 
 	const emailBodyHTML = `<div>
-			<h4>Dear Andrew,</h4><br/>
-			<p>You've recieved an email from the submission contact form on your portfolio.</p><br/>
-			<p>Below is the information:</p><br/><br/>
-			<p>Name: ${body.name}</p><br/>
-			<p>Email: ${body.email}</p><br/>
-			<p>Message: ${body.message}</p><br/><br/>
-			<p>Cheers,</p><br/>
+			<h4>Dear Andrew,</h4>
+			<p>You've recieved an email from the submission contact form on your portfolio.</p>
+			<p>Below is the information:</p>
+			<p>Name: ${body.name}</p>
+			<p>Email: ${body.email}</p>
+			<p>Message: ${body.message}</p>
+			<p>Cheers,</p>
 			<p>Yourself!</p>
 		</div>`;
 
