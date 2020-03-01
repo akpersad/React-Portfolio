@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 import Modal from "react-modal";
+import { FaGithub } from "react-icons/fa";
+import { MdPhonelink } from "react-icons/md";
+import weddingGif from "../../images/wedding.gif";
+import constants from "../../global/_constants";
 
 class Projects extends Component {
 	constructor(props) {
@@ -13,27 +17,49 @@ class Projects extends Component {
 					"Wedding Website": {
 						projectName: "Wedding Website",
 						projectUrl: "google.com",
-						projectDesc: "BLAH BLAH BLAH"
+						projectTechs: "React, React Router",
+						projectGithub: constants.githubSites.wedding,
+						projectDescription: "Cool description",
+						projectScreenShot: weddingGif
 					}
 				},
 				{
 					"Gulp Portfolio": {
 						projectName: "Gulp Portfolio",
 						projectUrl: "google.com",
-						projectDesc: "BLAH BLAH BLAH"
+						projectTechs: "Gulp, SASS",
+						projectGithub: constants.githubSites.portfolioGulp,
+						projectDescription: "Cool description",
+						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
 					}
 				},
 				{
 					"React Portfolio": {
 						projectName: "React Portfolio",
 						projectUrl: "google.com",
-						projectDesc: "BLAH BLAH BLAH"
+						projectTechs: "React, RESTful Api, Express, Node.js",
+						projectGithub: constants.githubSites.portfolioReact,
+						projectDescription: "Cool description",
+						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
+					}
+				},
+				{
+					"Chrome Extension": {
+						projectName: "Chrome Extension",
+						projectUrl: "google.com",
+						projectTechs: "Chrome Extension, JavaScript",
+						projectGithub: constants.githubSites.chromeExtension,
+						projectDescription: "Cool description",
+						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
 					}
 				}
 			],
 			modalInfo: {
 				modalTitle: "modalTitle",
 				modalBody: "modalBody",
+				modalTech: "modalTech",
+				modalSS: "modalSS",
+				modalGit: "modalGit",
 				modalUrl: "modalUrl"
 			}
 		};
@@ -52,7 +78,7 @@ class Projects extends Component {
 			return (
 				<button
 					type="button"
-					className="project-item"
+					className="project-item mb-3"
 					data-projectname={item}
 					key={item}
 					onClick={this.projectClick.bind(this)}
@@ -86,7 +112,10 @@ class Projects extends Component {
 		this.setState({
 			modalInfo: {
 				modalTitle: filtered[0].projectName,
-				modalBody: filtered[0].projectDesc,
+				modalBody: filtered[0].projectDescription,
+				modalGit: filtered[0].projectGithub,
+				modalTech: filtered[0].projectTechs,
+				modalSS: filtered[0].projectScreenShot,
 				modalUrl: filtered[0].projectUrl
 			}
 		});
@@ -102,6 +131,16 @@ class Projects extends Component {
 		const { modalInfo } = this.state;
 		return (
 			<div className="projects-comp">
+				<div>
+					<h3>My Recent Work</h3>
+					<p className="mb-5">
+						<span>
+							Here are a few design projects I&apos;ve worked on recently. Want to see
+							more? Email me.
+						</span>
+					</p>
+				</div>
+
 				<div className="projects-demos">{this.projectRender()}</div>
 
 				<Modal
@@ -127,7 +166,42 @@ class Projects extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								<p>{modalInfo.modalBody}</p>
+								<img
+									className="modal-image"
+									src={modalInfo.modalSS}
+									alt="Screenshot of Project"
+								/>
+								<p>
+									<span className="font-weight-bold pr-2">
+										Technologies used:
+									</span>
+									<span>{modalInfo.modalTech}</span>
+								</p>
+								<p>
+									<span>{modalInfo.modalBody}</span>
+								</p>
+								<p>
+									<div className="d-block">
+										<span className="pr-2">Github Link:</span>
+										<a
+											href={modalInfo.modalGit}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<FaGithub />
+										</a>
+									</div>
+									<div className="d-block">
+										<span className="pr-2">Website:</span>
+										<a
+											href={modalInfo.modalUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<MdPhonelink />
+										</a>
+									</div>
+								</p>
 							</div>
 							<div className="modal-footer">
 								<button
