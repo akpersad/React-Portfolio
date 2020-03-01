@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 import Modal from "react-modal";
+import { FaGithub } from "react-icons/fa";
+import { MdPhonelink } from "react-icons/md";
+import weddingGif from "../../images/wedding.gif";
 
 class Projects extends Component {
 	constructor(props) {
@@ -16,7 +19,7 @@ class Projects extends Component {
 						projectTechs: "React, React Router",
 						projectGithub: "https://www.google.com",
 						projectDescription: "Cool description",
-						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
+						projectScreenShot: weddingGif
 					}
 				},
 				{
@@ -158,11 +161,35 @@ class Projects extends Component {
 									alt="Screenshot of Project"
 								/>
 								<p>
-									<span className="font-weight-bold">Technologies used:</span>
+									<span className="font-weight-bold pr-2">
+										Technologies used:
+									</span>
 									<span>{modalInfo.modalTech}</span>
 								</p>
 								<p>
 									<span>{modalInfo.modalBody}</span>
+								</p>
+								<p>
+									<div className="d-block">
+										<span className="pr-2">Github Link:</span>
+										<a
+											href={modalInfo.modalGit}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<FaGithub />
+										</a>
+									</div>
+									<div className="d-block">
+										<span className="pr-2">Website:</span>
+										<a
+											href={modalInfo.modalUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<MdPhonelink />
+										</a>
+									</div>
 								</p>
 							</div>
 							<div className="modal-footer">

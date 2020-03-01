@@ -34,8 +34,10 @@
         .modal-dialog {
             max-width: 95%;
             .modal-body {
+                text-align: center;
                 .modal-image {
-                    width: 100%;
+                    max-width: 100%;
+                    height: 50vh;
                 }
             }
         }
