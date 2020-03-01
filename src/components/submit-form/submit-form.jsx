@@ -106,6 +106,7 @@ class SubmitForm extends Component {
 						onSubmit={this.sendEmail.bind(this)}
 						method="POST"
 						action="/"
+						autoComplete="off"
 					>
 						<div className="form-group">
 							<label htmlFor="name">
@@ -138,7 +139,7 @@ class SubmitForm extends Component {
 							</label>
 							{showEmailError && (
 								<span className="d-block text-danger text-size_small">
-									{errors.name}
+									{errors.email}
 								</span>
 							)}
 						</div>
@@ -155,7 +156,7 @@ class SubmitForm extends Component {
 							</label>
 							{showMailError && (
 								<span className="d-block text-danger text-size_small">
-									{errors.name}
+									{errors.message}
 								</span>
 							)}
 						</div>
