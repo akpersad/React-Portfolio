@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { FaGithub } from "react-icons/fa";
 import { MdPhonelink } from "react-icons/md";
 import weddingGif from "../../images/wedding.gif";
+import constants from "../../global/_constants";
 
 class Projects extends Component {
 	constructor(props) {
@@ -17,7 +18,7 @@ class Projects extends Component {
 						projectName: "Wedding Website",
 						projectUrl: "google.com",
 						projectTechs: "React, React Router",
-						projectGithub: "https://www.google.com",
+						projectGithub: constants.githubSites.wedding,
 						projectDescription: "Cool description",
 						projectScreenShot: weddingGif
 					}
@@ -27,7 +28,7 @@ class Projects extends Component {
 						projectName: "Gulp Portfolio",
 						projectUrl: "google.com",
 						projectTechs: "Gulp, SASS",
-						projectGithub: "https://www.google.com",
+						projectGithub: constants.githubSites.portfolioGulp,
 						projectDescription: "Cool description",
 						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
 					}
@@ -37,7 +38,7 @@ class Projects extends Component {
 						projectName: "React Portfolio",
 						projectUrl: "google.com",
 						projectTechs: "React, RESTful Api, Express, Node.js",
-						projectGithub: "https://www.google.com",
+						projectGithub: constants.githubSites.portfolioReact,
 						projectDescription: "Cool description",
 						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
 					}
@@ -47,7 +48,7 @@ class Projects extends Component {
 						projectName: "Chrome Extension",
 						projectUrl: "google.com",
 						projectTechs: "Chrome Extension, JavaScript",
-						projectGithub: "https://www.google.com",
+						projectGithub: constants.githubSites.chromeExtension,
 						projectDescription: "Cool description",
 						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
 					}
@@ -77,7 +78,7 @@ class Projects extends Component {
 			return (
 				<button
 					type="button"
-					className="project-item"
+					className="project-item mb-3"
 					data-projectname={item}
 					key={item}
 					onClick={this.projectClick.bind(this)}
@@ -130,6 +131,16 @@ class Projects extends Component {
 		const { modalInfo } = this.state;
 		return (
 			<div className="projects-comp">
+				<div>
+					<h3>My Recent Work</h3>
+					<p className="mb-5">
+						<span>
+							Here are a few design projects I&apos;ve worked on recently. Want to see
+							more? Email me.
+						</span>
+					</p>
+				</div>
+
 				<div className="projects-demos">{this.projectRender()}</div>
 
 				<Modal
