@@ -13,27 +13,49 @@ class Projects extends Component {
 					"Wedding Website": {
 						projectName: "Wedding Website",
 						projectUrl: "google.com",
-						projectDesc: "BLAH BLAH BLAH"
+						projectTechs: "React, React Router",
+						projectGithub: "https://www.google.com",
+						projectDescription: "Cool description",
+						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
 					}
 				},
 				{
 					"Gulp Portfolio": {
 						projectName: "Gulp Portfolio",
 						projectUrl: "google.com",
-						projectDesc: "BLAH BLAH BLAH"
+						projectTechs: "Gulp, SASS",
+						projectGithub: "https://www.google.com",
+						projectDescription: "Cool description",
+						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
 					}
 				},
 				{
 					"React Portfolio": {
 						projectName: "React Portfolio",
 						projectUrl: "google.com",
-						projectDesc: "BLAH BLAH BLAH"
+						projectTechs: "React, RESTful Api, Express, Node.js",
+						projectGithub: "https://www.google.com",
+						projectDescription: "Cool description",
+						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
+					}
+				},
+				{
+					"Chrome Extension": {
+						projectName: "Chrome Extension",
+						projectUrl: "google.com",
+						projectTechs: "Chrome Extension, JavaScript",
+						projectGithub: "https://www.google.com",
+						projectDescription: "Cool description",
+						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
 					}
 				}
 			],
 			modalInfo: {
 				modalTitle: "modalTitle",
 				modalBody: "modalBody",
+				modalTech: "modalTech",
+				modalSS: "modalSS",
+				modalGit: "modalGit",
 				modalUrl: "modalUrl"
 			}
 		};
@@ -86,7 +108,10 @@ class Projects extends Component {
 		this.setState({
 			modalInfo: {
 				modalTitle: filtered[0].projectName,
-				modalBody: filtered[0].projectDesc,
+				modalBody: filtered[0].projectDescription,
+				modalGit: filtered[0].projectGithub,
+				modalTech: filtered[0].projectTechs,
+				modalSS: filtered[0].projectScreenShot,
 				modalUrl: filtered[0].projectUrl
 			}
 		});
@@ -127,7 +152,18 @@ class Projects extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								<p>{modalInfo.modalBody}</p>
+								<img
+									className="modal-image"
+									src={modalInfo.modalSS}
+									alt="Screenshot of Project"
+								/>
+								<p>
+									<span className="font-weight-bold">Technologies used:</span>
+									<span>{modalInfo.modalTech}</span>
+								</p>
+								<p>
+									<span>{modalInfo.modalBody}</span>
+								</p>
 							</div>
 							<div className="modal-footer">
 								<button

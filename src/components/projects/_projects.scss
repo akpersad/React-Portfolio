@@ -28,9 +28,16 @@
     margin: auto;
     .react-modal {
         position: relative;
-        top: 25%;
         &:focus {
             outline: none;
+        }
+        .modal-dialog {
+            max-width: 95%;
+            .modal-body {
+                .modal-image {
+                    width: 100%;
+                }
+            }
         }
     }
 }
