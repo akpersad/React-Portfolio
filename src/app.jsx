@@ -10,6 +10,7 @@ import MainComp from "./components/welcome-component/welcome-component";
 import StickyNav from "./components/sticky-nav/sticky-nav";
 import Shapes from "./components/shapes/shapes";
 import Projects from "./components/projects/projects";
+import SubmitForm from "./components/submit-form/submit-form";
 
 class App extends Component {
 	render() {
@@ -45,7 +46,7 @@ class App extends Component {
 
 					<div className="sections">
 						<section className="section-parts" id="three">
-							Hello
+							<SubmitForm />
 						</section>
 					</div>
 
