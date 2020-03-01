@@ -6,7 +6,7 @@
     "proxy": "http://localhost:3000",
     "scripts": {
         "build": "webpack -p --mode production --watch & ./node_modules/.bin/webpack-dev-server --open --config ./webpack.config.js --mode development",
-        "noexpress-start": "webpack -p --mode production --watch & ./node_modules/.bin/webpack-dev-server --open --config ./webpack.config.js --mode development",
+        "noexpress-start": "webpack -p --mode development --watch & ./node_modules/.bin/webpack-dev-server --open --config ./webpack.config.js --mode development",
         "start": "nodemon --exec babel-node src/server.js",
         "dev": "nodemon --exec babel-node -r dotenv/config src/server.js",
         "lint": "eslint --fix --ext .js,.jsx .",
