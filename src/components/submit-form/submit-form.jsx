@@ -148,7 +148,6 @@ class SubmitForm extends Component {
 								Message
 								<textarea
 									className="form-control"
-									rows="5"
 									id="message"
 									onChange={this.handleFormChange.bind(this)}
 									value={message}

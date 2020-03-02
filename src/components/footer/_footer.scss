@@ -1,0 +1,8 @@
+.footer-component {
+    .footer-item {
+        flex: 0 0 50%;
+        &_bottom {
+            flex: 0 0 100%;
+        }
+    }
+}
