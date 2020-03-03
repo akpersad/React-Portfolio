@@ -15,18 +15,22 @@ import Shapes from "./components/shapes/shapes";
 import Projects from "./components/projects/projects";
 import Footer from "./components/footer/footer";
 
+const trackingId = "UA-36788567-8";
+ReactGA.initialize(trackingId, {
+	cookieDomain: "auto"
+});
 class App extends Component {
 	componentDidMount() {
-		const trackingId = process.env.GA;
-		ReactGA.initialize(trackingId);
-
 		getIP.then(response => {
 			ReactGA.set({
-				userIP: response.ip,
-				userCity: response.city,
-				userState: response.state,
-				userReferral: response.referral
+				dimension1: response.ip, // userIP
+				dimension2: response.city, // userCity
+				dimension3: response.state, // userState
+				dimension4: response.referral // userReferral
 			});
+
+			ReactGA.pageview(window.location.pathname + window.location.search);
+
 			console.log("GA LOADED", response);
 		});
 	}
