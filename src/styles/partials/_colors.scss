@@ -3,7 +3,9 @@
     // main
     @include defineColorHSL(--color-primary-darker, 220, 90%, 36%);
     @include defineColorHSL(--color-primary-dark, 220, 90%, 46%);
-    @include defineColorHSL(--color-primary, 220, 90%, 56%);
+    // @include defineColorHSL(--color-primary, 220, 90%, 56%);
+    @include defineColorHSL(--color-primary, 168, 76%, 42%);
+    @include defineColorHSL(--color-primary-inverse, 338, 83%, 63%);
     @include defineColorHSL(--color-primary-light, 220, 90%, 66%);
     @include defineColorHSL(--color-primary-lighter, 220, 90%, 76%);
 
@@ -57,6 +59,7 @@
         @include defineColorHSL(--color-primary-darker, 338, 83%, 43%);
         @include defineColorHSL(--color-primary-dark, 338, 83%, 53%);
         @include defineColorHSL(--color-primary, 338, 83%, 63%);
+        @include defineColorHSL(--color-primary-inverse, 168, 76%, 42%);
         @include defineColorHSL(--color-primary-light, 338, 83%, 73%);
         @include defineColorHSL(--color-primary-lighter, 338, 83%, 83%);
 
@@ -252,6 +255,7 @@ $darkolivegreen: rgb(85, 107, 47); //#556B2F
 $mediumaquamarine: rgb(102, 205, 170); //#66CDAA
 $darkseagreen: rgb(143, 188, 139); //#8FBC8B
 $lightseagreen: rgb(32, 178, 170); //#20B2AA
+$lightseagreen2: #1abc9c;
 $darkcyan: rgb(0, 139, 139); //#008B8B
 $teal: rgb(0, 128, 128); //#008080
 

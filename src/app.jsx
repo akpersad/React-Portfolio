@@ -10,7 +10,7 @@ import MainComp from "./components/welcome-component/welcome-component";
 import StickyNav from "./components/sticky-nav/sticky-nav";
 import Shapes from "./components/shapes/shapes";
 import Projects from "./components/projects/projects";
-import SubmitForm from "./components/submit-form/submit-form";
+import Footer from "./components/footer/footer";
 
 class App extends Component {
 	render() {
@@ -46,7 +46,7 @@ class App extends Component {
 
 					<div className="sections">
 						<section className="section-parts" id="three">
-							<SubmitForm />
+							Submit
 						</section>
 					</div>
 
@@ -61,6 +61,9 @@ class App extends Component {
 							Hello
 						</section>
 					</div>
+				</div>
+				<div className="footer-component">
+					<Footer />
 				</div>
 			</>
 		);

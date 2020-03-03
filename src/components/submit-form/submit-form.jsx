@@ -119,11 +119,16 @@ class SubmitForm extends Component {
 									value={name}
 								/>
 							</label>
-							{showNameError && (
-								<span className="d-block text-danger text-size_small">
-									{errors.name}
-								</span>
-							)}
+
+							<span
+								className={
+									showNameError
+										? "visible d-block text-danger text-size_small"
+										: "invisible d-block text-danger text-size_small"
+								}
+							>
+								{errors.name}
+							</span>
 						</div>
 						<div className="form-group">
 							<label htmlFor="exampleInputEmail1">
@@ -137,28 +142,36 @@ class SubmitForm extends Component {
 									aria-describedby="emailHelp"
 								/>
 							</label>
-							{showEmailError && (
-								<span className="d-block text-danger text-size_small">
-									{errors.email}
-								</span>
-							)}
+
+							<span
+								className={
+									showEmailError
+										? "visible d-block text-danger text-size_small"
+										: "invisible d-block text-danger text-size_small"
+								}
+							>
+								{errors.email}
+							</span>
 						</div>
 						<div className="form-group">
 							<label htmlFor="message">
 								Message
 								<textarea
 									className="form-control"
-									rows="5"
 									id="message"
 									onChange={this.handleFormChange.bind(this)}
 									value={message}
 								/>
 							</label>
-							{showMailError && (
-								<span className="d-block text-danger text-size_small">
-									{errors.message}
-								</span>
-							)}
+							<span
+								className={
+									showMailError
+										? "visible d-block text-danger text-size_small"
+										: "invisible d-block text-danger text-size_small"
+								}
+							>
+								{errors.message}
+							</span>
 						</div>
 						<button type="submit" className="btn btn-primary">
 							Submit
