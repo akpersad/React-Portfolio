@@ -2,6 +2,21 @@ import axios from "axios";
 
 const userObj = {};
 
+const getUrlVars = () => {
+	const vars = {};
+	window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+		vars[key] = value;
+	});
+	return vars;
+};
+
+const getReferral = () => {
+	if (getUrlVars().referral) {
+		return getUrlVars().referral;
+	}
+	return "organic";
+};
+
 export const getIP = axios
 	.get("https://json.geoiplookup.io/")
 	.then(
@@ -9,6 +24,7 @@ export const getIP = axios
 			userObj.ip = response.data.ip;
 			userObj.city = response.data.city;
 			userObj.state = response.data.region;
+			userObj.referral = getReferral();
 
 			return userObj;
 		},
