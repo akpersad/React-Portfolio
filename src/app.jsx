@@ -3,6 +3,9 @@ import "./styles/main.scss";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import Favicon from "react-favicon";
+import ReactGA from "react-ga";
+import { getIP } from "./global/_getIP";
+
 import FaviconImage from "./images/logo.svg";
 
 import Header from "./components/header/header";
@@ -13,6 +16,21 @@ import Projects from "./components/projects/projects";
 import Footer from "./components/footer/footer";
 
 class App extends Component {
+	componentDidMount() {
+		const trackingId = process.env.GA;
+		ReactGA.initialize(trackingId);
+
+		getIP.then(response => {
+			ReactGA.set({
+				userIP: response.ip,
+				userCity: response.city,
+				userState: response.state,
+				userReferral: response.referral
+			});
+			console.log("GA LOADED", response);
+		});
+	}
+
 	render() {
 		return (
 			<>
