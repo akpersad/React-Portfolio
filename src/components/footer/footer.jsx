@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FaTwitter, FaLinkedinIn, FaSalesforce, FaGithub } from "react-icons/fa";
+import Legos from "../../images/legos.gif";
 
 import constants from "../../global/_constants";
 import SubmitForm from "../submit-form/submit-form";
@@ -9,10 +10,18 @@ class Footer extends Component {
 		return (
 			<section className="section-parts" id="six">
 				<div className="d-flex flex-wrap">
-					<div className="left-item footer-item">Left Item</div>
+					<div className="left-item footer-item">
+						<h4>Let&apos;s Connect!</h4>
+						<p>Drop me a line and let&apos;s start building!</p>
+						<p>
+							<img className="footer-image" src={Legos} alt="Lego Blocks Building" />
+						</p>
+					</div>
+
 					<div className="right-item footer-item">
 						<SubmitForm />
 					</div>
+
 					<div className="bottom-item footer-item_bottom mt-5">
 						<div className="social-icons d-flex flex-row flex-wrap justify-content-center mb-4">
 							<a
@@ -57,7 +66,7 @@ class Footer extends Component {
 						</div>
 
 						<div className="made-with d-flex justify-content-center">
-							Made with Love
+							<span>Made by Me! &copy; 2020</span>
 						</div>
 					</div>
 				</div>
