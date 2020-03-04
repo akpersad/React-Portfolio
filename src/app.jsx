@@ -17,7 +17,8 @@ import Footer from "./components/footer/footer";
 
 const trackingId = "UA-36788567-8";
 ReactGA.initialize(trackingId, {
-	cookieDomain: "auto"
+	cookieDomain: "auto",
+	testMode: true
 });
 class App extends Component {
 	componentDidMount() {
