@@ -1,0 +1,25 @@
+.about-me_container {
+    width: 55%;
+    @include breakpoint(sm-only) {
+        width: 100%;
+    }
+    & + .hero-item {
+        @include breakpoint(sm-only) {
+            height: 100%;
+            width: 100%;
+        }
+        path,
+        ellipse,
+        rect,
+        line {
+            stroke: var(--color-primary);
+        }
+        ellipse#Oval-5,
+        rect#Rectangle-11,
+        path#Shape,
+        rect#Rectangle-18,
+        path#Rectangle-11 {
+            fill: var(--color-primary);
+        }
+    }
+}
