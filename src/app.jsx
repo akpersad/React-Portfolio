@@ -28,10 +28,7 @@ class App extends Component {
 				dimension3: response.state, // userState
 				dimension4: response.referral // userReferral
 			});
-
 			ReactGA.pageview(window.location.pathname + window.location.search);
-
-			console.log("GA LOADED", response);
 		});
 	}
 
