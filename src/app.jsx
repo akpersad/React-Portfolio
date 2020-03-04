@@ -4,16 +4,16 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import Favicon from "react-favicon";
 import ReactGA from "react-ga";
-import { getIP } from "./global/_getIP";
+// import { getIP } from "./global/_getIP";
 
 import FaviconImage from "./images/logo.svg";
 
 import Header from "./components/header/header";
 import MainComp from "./components/welcome-component/welcome-component";
 import StickyNav from "./components/sticky-nav/sticky-nav";
-import Shapes from "./components/shapes/shapes";
 import Projects from "./components/projects/projects";
 import Footer from "./components/footer/footer";
+import AboutMe from "./components/about-me/about-me";
 
 const trackingId = "UA-36788567-8";
 ReactGA.initialize(trackingId, {
@@ -21,17 +21,17 @@ ReactGA.initialize(trackingId, {
 	testMode: true
 });
 class App extends Component {
-	componentDidMount() {
-		getIP.then(response => {
-			ReactGA.set({
-				dimension1: response.ip, // userIP
-				dimension2: response.city, // userCity
-				dimension3: response.state, // userState
-				dimension4: response.referral // userReferral
-			});
-			ReactGA.pageview(window.location.pathname + window.location.search);
-		});
-	}
+	// componentDidMount() {
+	// 	getIP.then(response => {
+	// 		ReactGA.set({
+	// 			dimension1: response.ip, // userIP
+	// 			dimension2: response.city, // userCity
+	// 			dimension3: response.state, // userState
+	// 			dimension4: response.referral // userReferral
+	// 		});
+	// 		ReactGA.pageview(window.location.pathname + window.location.search);
+	// 	});
+	// }
 
 	render() {
 		return (
@@ -51,7 +51,7 @@ class App extends Component {
 					<div className="sections">
 						<section className="section-parts" id="one">
 							<div className="h-100" id="shapes">
-								<Shapes />
+								<AboutMe />
 							</div>
 						</section>
 					</div>
