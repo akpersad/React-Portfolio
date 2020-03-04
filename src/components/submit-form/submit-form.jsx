@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import ReactGA from "react-ga";
 import { RingLoader } from "react-spinners";
 
 class SubmitForm extends Component {
@@ -65,6 +66,11 @@ class SubmitForm extends Component {
 		this.setState({ isLoading: true });
 
 		if (this.validateForm(event)) {
+			ReactGA.event({
+				category: "User",
+				action: "Contact Form Submission"
+			});
+
 			axios
 				.post("/", postBody)
 				.then(
