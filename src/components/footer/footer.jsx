@@ -1,12 +1,68 @@
 import React, { Component } from "react";
 import { FaTwitter, FaLinkedinIn, FaSalesforce, FaGithub } from "react-icons/fa";
+import ReactGA from "react-ga";
 import Legos from "../../images/legos.gif";
 
 import constants from "../../global/_constants";
 import SubmitForm from "../submit-form/submit-form";
 
 class Footer extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			quote: ""
+		};
+	}
+
+	componentDidMount() {
+		if (window.localStorage.getItem("quote")) {
+			const quoteTime = new Date(window.localStorage.getItem("quoteDate"));
+			const twoHours = 60 * 60 * 1000 * 2; /* ms */
+			if (new Date() - quoteTime < twoHours) {
+				this.setState({ quote: window.localStorage.getItem("quote") });
+			} else {
+				this.fetchQuote();
+			}
+		} else {
+			this.fetchQuote();
+		}
+	}
+
+	fetchQuote() {
+		const backupQuote = "Only those who dare to fail greatly can ever achieve greatly.";
+		const url = "https://quotes.rest/qod";
+		fetch(url)
+			.then(results => {
+				results
+					.json()
+					.then(jsonResults => {
+						this.setState({ quote: jsonResults.contents.quotes[0].quote });
+						window.localStorage.setItem("quote", jsonResults.contents.quotes[0].quote);
+						window.localStorage.setItem("quoteDate", new Date());
+					})
+					.catch(err => {
+						console.log(err);
+						this.setState({ quote: backupQuote });
+					});
+			})
+			.catch(err => {
+				console.log(err);
+				this.setState({ quote: backupQuote });
+			});
+	}
+
+	sendEvent(event) {
+		const linkOut = `Linked out to ${event.currentTarget.id}`;
+		ReactGA.event({
+			category: "User",
+			action: linkOut
+		});
+	}
+
 	render() {
+		const { quote } = this.state;
+
 		return (
 			<section className="section-parts" id="six">
 				<div className="d-flex flex-wrap">
