@@ -129,8 +129,8 @@ class SubmitForm extends Component {
 							<span
 								className={
 									showNameError
-										? "visible d-block text-danger text-size_small"
-										: "invisible d-block text-danger text-size_small"
+										? "visible d-block submit-error text-size_small"
+										: "invisible d-block submit-error text-size_small"
 								}
 							>
 								{errors.name}
@@ -152,8 +152,8 @@ class SubmitForm extends Component {
 							<span
 								className={
 									showEmailError
-										? "visible d-block text-danger text-size_small"
-										: "invisible d-block text-danger text-size_small"
+										? "visible d-block submit-error text-size_small"
+										: "invisible d-block submit-error text-size_small"
 								}
 							>
 								{errors.email}
@@ -172,8 +172,8 @@ class SubmitForm extends Component {
 							<span
 								className={
 									showMailError
-										? "visible d-block text-danger text-size_small"
-										: "invisible d-block text-danger text-size_small"
+										? "visible d-block submit-error text-size_small"
+										: "invisible d-block submit-error text-size_small"
 								}
 							>
 								{errors.message}

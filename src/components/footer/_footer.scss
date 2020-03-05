@@ -1,7 +1,14 @@
 .footer-component {
-    background-color: var(--color-primary) !important;
+    .section-parts {
+        background-color: var(--color-primary) !important;
+        color: var(--color-black);
+        padding-bottom: 25px;
+    }
     .footer-item {
         flex: 0 0 50%;
+        h4 {
+            color: var(--color-black);
+        }
         &_bottom {
             flex: 0 0 100%;
             .social-icons_item {
@@ -14,10 +21,33 @@
                     fill: var(--color-primary-inverse);
                 }
             }
+            .font-size_quote {
+                font-size: 14px;
+            }
+            .quote-link {
+                font-size: 14px;
+                color: var(--color-black);
+                &:hover {
+                    color: var(--color-black);
+                }
+            }
         }
         .footer-image {
             width: 75%;
             border-radius: 50%;
+        }
+    }
+}
+
+@include breakpoint(sm-only) {
+    .footer-component {
+        .footer-item {
+            flex: 0 0 100%;
+            &_bottom {
+                .social-icons_item {
+                    padding: 12px;
+                }
+            }
         }
     }
 }
