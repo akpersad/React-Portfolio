@@ -11,7 +11,7 @@ class AboutMe extends Component {
 	render() {
 		return (
 			<>
-				<div>
+				<div className="about-me_parent">
 					<h3>Hi, I&apos;m Andrew. Nice to meet you!</h3>
 					<p className="m-auto about-me_container pt-3">
 						<span className="d-block mb-4">
@@ -21,8 +21,8 @@ class AboutMe extends Component {
 						</span>
 						<span className="d-block mb-4">
 							I&apos;ve worked closely with design teams, functional folks and
-							directly with clients. I&apos;ve led teams both with me onsite and both
-							off/near shore.
+							directly with clients to deliver responsive and beautiful sites.
+							I&apos;ve led teams both with me onsite and both off/near shore.
 						</span>
 						<span className="d-block mb-4">
 							I love building, learning and doing. Let&apos;s work together and make

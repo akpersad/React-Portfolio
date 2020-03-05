@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes|Dancing+Script|Lobster|Open+Sans|Ubuntu&display=swap");
 @import "~bootstrap/scss/bootstrap";
 
 // Globals
@@ -29,6 +30,7 @@
 
 body {
     transition: $transition-time;
+    background-color: var(--color-bg);
 }
 
 #root {
