@@ -84,8 +84,10 @@ class Footer extends Component {
 								href={constants.socialSites.twitter}
 								target="_blank"
 								rel="noopener noreferrer"
+								id="social_twitter"
+								onClick={this.sendEvent.bind(this)}
 							>
-								<div className="social-icons_item mx-5">
+								<div className="social-icons_item mx-sm-5 mx-2">
 									<FaTwitter size="1.2em" />
 								</div>
 							</a>
@@ -94,8 +96,10 @@ class Footer extends Component {
 								href={constants.socialSites.linkedin}
 								target="_blank"
 								rel="noopener noreferrer"
+								id="social_linkedin"
+								onClick={this.sendEvent.bind(this)}
 							>
-								<div className="social-icons_item mx-5">
+								<div className="social-icons_item mx-sm-5 mx-2">
 									<FaLinkedinIn size="1.2em" />
 								</div>
 							</a>
@@ -104,8 +108,10 @@ class Footer extends Component {
 								href={constants.socialSites.trailhead}
 								target="_blank"
 								rel="noopener noreferrer"
+								id="social_salesforce"
+								onClick={this.sendEvent.bind(this)}
 							>
-								<div className="social-icons_item mx-5">
+								<div className="social-icons_item mx-sm-5 mx-2">
 									<FaSalesforce size="1.2em" />
 								</div>
 							</a>
@@ -114,15 +120,33 @@ class Footer extends Component {
 								href={constants.socialSites.github}
 								target="_blank"
 								rel="noopener noreferrer"
+								id="social_github"
+								onClick={this.sendEvent.bind(this)}
 							>
-								<div className="social-icons_item mx-5">
+								<div className="social-icons_item mx-sm-5 mx-2">
 									<FaGithub size="1.2em" />
 								</div>
 							</a>
 						</div>
 
-						<div className="made-with d-flex justify-content-center">
-							<span>Made by Me! &copy; 2020</span>
+						<div className="made-with d-flex flex-column justify-content-center">
+							<p>
+								<span>Made by Me! &copy; 2020</span>
+							</p>
+							<p>
+								<q className="font-size_quote">{quote}</q>
+								<span className="d-block">
+									-
+									<a
+										className="quote-link"
+										href="https://quotes.rest/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										They Said So Quotes API
+									</a>
+								</span>
+							</p>
 						</div>
 					</div>
 				</div>

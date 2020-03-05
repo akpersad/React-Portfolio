@@ -39,16 +39,10 @@
 section.section-parts {
     width: 100%;
     padding: 50px;
-    background: var(--colog-bg);
+    background-color: var(--color-bg-same);
     border-bottom: 1px solid #ccc;
     min-height: 500px;
     text-align: center;
-    &:nth-child(even) {
-        background: var(--color-contrast-medium);
-    }
-    &:nth-child(odd) {
-        background: var(--color-white-dark);
-    }
     &::first-child {
         margin-top: 60px;
     }
