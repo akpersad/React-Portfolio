@@ -1,5 +1,6 @@
 .testimonials-container {
     .slick-slider {
+        margin-top: 25px !important;
         &.slick-initialized {
             width: 75%;
             margin: auto;
@@ -10,8 +11,20 @@
                 }
             }
             .slick-slider_item {
-                height: 350px;
-                width: 70%;
+                height: 500px;
+                width: 80% !important;
+                .testimonial-container {
+                    border: 1px solid black;
+                    height: 400px;
+                    background-color: lightgrey;
+                    margin-top: 80px;
+                    img {
+                        margin-top: -80px;
+                        width: 180px;
+                        display: inline;
+                        border-radius: 50%;
+                    }
+                }
             }
 
             .slick-dots {
