@@ -14,6 +14,7 @@ import StickyNav from "./components/sticky-nav/sticky-nav";
 import Projects from "./components/projects/projects";
 import Footer from "./components/footer/footer";
 import AboutMe from "./components/about-me/about-me";
+import Testimonials from "./components/testimonials/testimonials";
 
 const trackingId = "UA-36788567-8";
 ReactGA.initialize(trackingId, {
@@ -66,19 +67,7 @@ class App extends Component {
 
 					<div className="sections">
 						<section className="section-parts" id="three">
-							Submit
-						</section>
-					</div>
-
-					<div className="sections">
-						<section className="section-parts" id="four">
-							Hello
-						</section>
-					</div>
-
-					<div className="sections">
-						<section className="section-parts" id="five">
-							Hello
+							<Testimonials />
 						</section>
 					</div>
 				</div>

@@ -1,0 +1,25 @@
+.testimonials-container {
+    .slick-slider {
+        &.slick-initialized {
+            width: 75%;
+            margin: auto;
+            .slick-arrow {
+                &::before {
+                    font-size: 30px;
+                    color: var(--color-black);
+                }
+            }
+            .slick-slider_item {
+                height: 350px;
+                width: 70%;
+            }
+
+            .slick-dots {
+                li button::before {
+                    font-size: 36px;
+                    color: var(--color-black);
+                }
+            }
+        }
+    }
+}
