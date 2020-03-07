@@ -1,4 +1,7 @@
 .testimonials-container {
+    h2 {
+        color: var(--color-black);
+    }
     .slick-slider {
         margin-top: 25px !important;
         &.slick-initialized {
@@ -19,12 +22,13 @@
                 max-width: 660px;
                 margin: auto;
                 @include breakpoint(sm-only) {
-                    width: 100% !important;
+                    width: 90% !important;
                 }
                 .testimonial-container {
-                    background-color: lightgrey;
-                    border: 1px solid black;
+                    background-color: var(--color-bg);
+                    border: 5px solid var(--color-primary);
                     border-radius: 15px;
+                    box-shadow: 5px 7px 20px 0px rgba(0, 0, 0, 0.05);
                     height: 400px;
                     margin-top: 80px;
                     padding: 0 15px;
@@ -33,12 +37,12 @@
                     }
                     img {
                         margin-top: -80px;
-                        width: 180px;
+                        width: 120px;
                         display: inline-block;
                         border-radius: 50%;
                         @include breakpoint(sm-only) {
                             margin-top: -50px;
-                            width: 120px;
+                            width: 80px;
                         }
                     }
                 }
