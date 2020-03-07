@@ -2,35 +2,22 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import SliderItem from "../slider-item/slider-item";
 
-import Bodhi from "../../images/bodhi.png";
+import testimonials from "./_testimonials-obj";
 
 import "../slider-item/_slider-item.scss";
 
 class Testimonials extends Component {
 	renderSliderItem() {
-		const temp = [
-			{
-				image: Bodhi,
-				name: "Andrew",
-				details:
-					"Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe!"
-			},
-			{
-				image: Bodhi,
-				name: "Andrew",
-				details:
-					"Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe!"
-			},
-			{
-				image: Bodhi,
-				name: "Andrew",
-				details:
-					"Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe! Andrew is so awesomoe!"
-			}
-		];
-
-		return temp.map(item => {
-			return <SliderItem image={item.image} name={item.name} details={item.details} />;
+		return testimonials.map(item => {
+			return (
+				<SliderItem
+					key={item.name}
+					image={item.image}
+					name={item.name}
+					jobTitle={item.jobTitle}
+					details={item.details}
+				/>
+			);
 		});
 	}
 

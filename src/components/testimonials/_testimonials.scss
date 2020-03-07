@@ -4,6 +4,9 @@
         &.slick-initialized {
             width: 75%;
             margin: auto;
+            @include breakpoint(sm-only) {
+                width: 90%;
+            }
             .slick-arrow {
                 &::before {
                     font-size: 30px;
@@ -13,17 +16,30 @@
             .slick-slider_item {
                 height: 500px;
                 width: 80% !important;
+                max-width: 660px;
                 margin: auto;
+                @include breakpoint(sm-only) {
+                    width: 100% !important;
+                }
                 .testimonial-container {
-                    border: 1px solid black;
-                    height: 400px;
                     background-color: lightgrey;
+                    border: 1px solid black;
+                    border-radius: 15px;
+                    height: 400px;
                     margin-top: 80px;
+                    padding: 0 15px;
+                    @include breakpoint(sm-only) {
+                        height: 350px;
+                    }
                     img {
                         margin-top: -80px;
                         width: 180px;
-                        display: inline;
+                        display: inline-block;
                         border-radius: 50%;
+                        @include breakpoint(sm-only) {
+                            margin-top: -50px;
+                            width: 120px;
+                        }
                     }
                 }
             }

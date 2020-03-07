@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 class SliderItem extends Component {
 	render() {
-		const { image, name, details } = this.props;
+		const { image, name, details, jobTitle } = this.props;
 
 		return (
 			<div className="slick-slider_item">
@@ -11,10 +11,11 @@ class SliderItem extends Component {
 					<div className="d-flex flex-column justify-content-center align-item-center text-center">
 						<div className="flex-image">
 							<img src={image} alt="Bodhi" />
-							<div className="image-circle" />
 						</div>
 
-						<div className="flex-name my-4">{name}</div>
+						<div className="flex-name mt-4">{name}</div>
+
+						<div className="flex-name mb-4">{jobTitle}</div>
 
 						<div className="flex-words">{details}</div>
 					</div>
@@ -27,7 +28,8 @@ class SliderItem extends Component {
 SliderItem.propTypes = {
 	image: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
-	details: PropTypes.string.isRequired
+	details: PropTypes.string.isRequired,
+	jobTitle: PropTypes.string.isRequired
 };
 
 export default SliderItem;
