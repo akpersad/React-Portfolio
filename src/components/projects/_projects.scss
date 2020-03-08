@@ -37,11 +37,14 @@
         }
         .modal-dialog {
             max-width: 95%;
-            .modal-body {
-                text-align: center;
-                .modal-image {
-                    max-width: 100%;
-                    max-height: 50vh;
+            .modal-content {
+                background-color: var(--color-bg);
+                .modal-body {
+                    text-align: center;
+                    .modal-image {
+                        max-width: 100%;
+                        max-height: 50vh;
+                    }
                 }
             }
         }

@@ -1,0 +1,36 @@
+#contact-form {
+    .form-group {
+        label {
+            width: 100%;
+            input,
+            textarea {
+                max-width: 500px;
+                margin: auto;
+                border: none;
+                border-radius: 20px;
+                outline: none;
+                padding: 20px;
+                font-size: 1em;
+                color: #676767;
+                background-color: var(--color-white);
+                transition: border 0.5s;
+                -webkit-transition: border 0.5s;
+                -moz-transition: border 0.5s;
+                -o-transition: border 0.5s;
+                border: solid 2px var(--color-primary);
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                &#message {
+                    height: 100px;
+                }
+            }
+        }
+        .text-size_small {
+            font-size: 1rem;
+        }
+        .submit-error {
+            color: var(--color-contrast-high);
+        }
+    }
+}
