@@ -90,32 +90,32 @@ class StickyNav extends Component {
 					<ul>
 						<li>
 							<a
-								className="one"
+								className="section_about-me"
 								onClick={this.scrollToElement.bind(this)}
 								href="#/"
-								data-scrollto="one"
+								data-scrollto="section_about-me"
 							>
-								First
+								About Me
 							</a>
 						</li>
 						<li>
 							<a
-								className="two"
+								className="section_projects"
 								onClick={this.scrollToElement.bind(this)}
 								href="#/"
-								data-scrollto="two"
+								data-scrollto="section_projects"
 							>
-								Second
+								Projects
 							</a>
 						</li>
 						<li>
 							<a
-								className="three"
+								className="section_testimonials"
 								onClick={this.scrollToElement.bind(this)}
 								href="#/"
-								data-scrollto="three"
+								data-scrollto="section_testimonials"
 							>
-								Third
+								Testimonials
 							</a>
 						</li>
 						<li>

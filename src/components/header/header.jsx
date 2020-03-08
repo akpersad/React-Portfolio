@@ -1,11 +1,22 @@
 import React, { Component } from "react";
+import ReactGA from "react-ga";
 import { hasClass, toggleClass } from "../../global/_util";
-// import PropTypes from "prop-types";
+
 import Logo from "../../images/logo.svg";
 import { loadSvg } from "../../global/_importSVG";
 
 class Header extends Component {
 	componentDidMount() {
+		const sections = document.querySelectorAll("section.section-parts");
+		const navElem = document.querySelector("#sticky-nav_nav");
+		const navHeight = navElem.offsetHeight;
+		const navTop = navElem.offsetTop;
+
+		this.sections = sections;
+		this.navElem = navElem;
+		this.navHeight = navHeight;
+		this.navTop = navTop;
+
 		loadSvg("#logo-comp");
 		const lightSwitch = document.querySelector("#lightSwitch");
 		const mainHeader = document.querySelector(".js-main-header");
@@ -67,16 +78,42 @@ class Header extends Component {
 		}
 	}
 
+	scrollToElement(event) {
+		event.preventDefault();
+
+		const targetElement = event.target;
+		const elementId = targetElement.getAttribute("data-scrollto");
+		const element = document.querySelector(`#${elementId}`);
+		const bodyRect = document.body.getBoundingClientRect().top;
+		const elementRect = element.getBoundingClientRect().top;
+		const elementPosition = elementRect - bodyRect;
+		const offsetPosition =
+			elementPosition -
+			this.navHeight -
+			(window.pageYOffset >= this.navTop ? 0 : this.navHeight);
+
+		const linkOut = `Header: Scrolled To ${elementId}`;
+		ReactGA.event({
+			category: "User",
+			action: linkOut
+		});
+
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: "smooth"
+		});
+	}
+
 	render() {
 		return (
 			<div className="main-header-container">
 				{/* Enter component html here */}
 				<header className="main-header js-main-header margin-top--sm margin-bottom--lg">
 					<div className="container container--lg">
-						<div className="main-header__layout">
+						<div className="main-header__layout d-flex flex-wrap justify-content-between">
 							<img id="logo-comp" src={Logo} alt="Logo" />
 							<div className="main-header__logo">
-								<a href="#0">
+								<a href="#0" className="logo-link">
 									<svg width="130" height="32" viewBox="0 0 130 32">
 										<title>Go to homepage</title>
 										<circle
@@ -119,33 +156,33 @@ class Header extends Component {
 								<ul className="main-header__nav-list">
 									<li className="main-header__nav-item nav-item_display-web-only">
 										<a
-											data-scrollto="test1234"
+											data-scrollto="section_about-me"
 											href="#0"
 											className="main-header__nav-link"
 											aria-current="page"
-											// onclick="scrollToElement(this)"
+											onClick={this.scrollToElement.bind(this)}
 										>
-											About
+											About Me
 										</a>
 									</li>
 									<li className="main-header__nav-item nav-item_display-web-only">
 										<a
-											data-scrollto="test12345"
+											data-scrollto="section_projects"
 											href="#0"
 											className="main-header__nav-link"
-											// onclick="scrollToElement(this)"
+											onClick={this.scrollToElement.bind(this)}
 										>
 											Projects
 										</a>
 									</li>
 									<li className="main-header__nav-item nav-item_display-web-only">
 										<a
-											data-scrollto="test123456"
+											data-scrollto="section_testimonials"
 											href="#0"
 											className="main-header__nav-link"
-											// onclick="scrollToElement(this)"
+											onClick={this.scrollToElement.bind(this)}
 										>
-											Contact
+											Testimonials
 										</a>
 									</li>
 									<li
@@ -153,9 +190,14 @@ class Header extends Component {
 										aria-hidden="true"
 									/>
 									<li className="main-header__nav-item nav-item_display-web-only">
-										<a href="#0" className="btn btn--primary">
-											Download
-										</a>
+										<button
+											data-scrollto="section_footer"
+											type="button"
+											onClick={this.scrollToElement.bind(this)}
+											className="btn btn--primary"
+										>
+											Contact Me
+										</button>
 									</li>
 									<li className="main-header__nav-item">
 										{/* Switch Toggle */}
@@ -191,7 +233,5 @@ class Header extends Component {
 		);
 	}
 }
-
-// Header.propTypes = {};
 
 export default Header;

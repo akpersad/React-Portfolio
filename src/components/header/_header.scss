@@ -17,6 +17,38 @@
         background-color: var(--color-bg);
         border-bottom: 1px solid var(--color-contrast-low);
         z-index: $zindex-main-header;
+
+        a:not(.logo-link) {
+            background: linear-gradient(
+                to top,
+                var(--color-primary),
+                var(--color-primary) 100%,
+                transparent 100%,
+                transparent
+            );
+            background-position: center 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            color: var(--color-opposite);
+            display: inline;
+            line-height: 1em;
+            padding: 0;
+            position: relative;
+            text-decoration: none;
+            transition: all 500ms ease;
+            z-index: 1;
+            &:hover,
+            &:focus {
+                background-size: 100% 100%;
+            }
+        }
+
+        a.logo-link {
+            @include breakpoint(sm-only) {
+                display: none;
+            }
+        }
+
         @include breakpoint(sm-only) {
             height: 100px;
         }
@@ -95,6 +127,9 @@
             }
             &-trigger {
                 display: none;
+                @include breakpoint(sm-only) {
+                    display: inline-flex;
+                }
                 &-icon {
                     position: relative;
                     display: block;
