@@ -6,6 +6,13 @@ import Logo from "../../images/logo.svg";
 import { loadSvg } from "../../global/_importSVG";
 
 class Header extends Component {
+	constructor() {
+		super();
+		this.state = {
+			showModalMenu: false
+		};
+	}
+
 	componentDidMount() {
 		const sections = document.querySelectorAll("section.section-parts");
 		const navElem = document.querySelector("#sticky-nav_nav");
@@ -104,6 +111,14 @@ class Header extends Component {
 		});
 	}
 
+	toggleMobileMenu(event) {
+		const { showModalMenu } = this.state;
+		event.preventDefault();
+		this.setState({ showModalMenu: !showModalMenu });
+		const menuItem = document.querySelector(".main-header__nav-list");
+		toggleClass(menuItem, "nav-item_display-web-only", showModalMenu);
+	}
+
 	render() {
 		return (
 			<div className="main-header-container">
@@ -134,11 +149,12 @@ class Header extends Component {
 							</div>
 
 							<button
-								className="btn btn--subtle main-header__nav-trigger js-main-header__nav-trigger"
+								className="btn btn--subtle main-header__nav-trigger js-main-header__nav-trigger ml-auto"
 								aria-label="Toggle menu"
 								aria-expanded="false"
 								aria-controls="main-header-nav"
 								type="button"
+								onClick={this.toggleMobileMenu.bind(this)}
 							>
 								<i className="main-header__nav-trigger-icon" aria-hidden="true" />
 								<span>Menu</span>
@@ -153,8 +169,8 @@ class Header extends Component {
 								<div id="main-header-nav-label" className="main-header__nav-label">
 									Main menu
 								</div>
-								<ul className="main-header__nav-list">
-									<li className="main-header__nav-item nav-item_display-web-only">
+								<ul className="main-header__nav-list nav-item_display-web-only">
+									<li className="main-header__nav-item">
 										<a
 											data-scrollto="section_about-me"
 											href="#0"
@@ -165,7 +181,7 @@ class Header extends Component {
 											About Me
 										</a>
 									</li>
-									<li className="main-header__nav-item nav-item_display-web-only">
+									<li className="main-header__nav-item">
 										<a
 											data-scrollto="section_projects"
 											href="#0"
@@ -175,7 +191,7 @@ class Header extends Component {
 											Projects
 										</a>
 									</li>
-									<li className="main-header__nav-item nav-item_display-web-only">
+									<li className="main-header__nav-item">
 										<a
 											data-scrollto="section_testimonials"
 											href="#0"
@@ -186,15 +202,15 @@ class Header extends Component {
 										</a>
 									</li>
 									<li
-										className="main-header__nav-item nav-item_display-web-only main-header__nav-divider"
+										className="main-header__nav-item main-header__nav-divider"
 										aria-hidden="true"
 									/>
-									<li className="main-header__nav-item nav-item_display-web-only">
+									<li className="main-header__nav-item">
 										<button
 											data-scrollto="section_footer"
 											type="button"
 											onClick={this.scrollToElement.bind(this)}
-											className="btn btn--primary"
+											className="btn btn--primary btn--mobile_only"
 										>
 											Contact Me
 										</button>

@@ -704,3 +704,47 @@
     width: 60px;
     stroke: var(--color-primary);
 }
+
+// Mobile Styles
+@include breakpoint(sm-only) {
+    .main-header__nav {
+        width: 100vw;
+        background-color: white;
+        position: relative;
+        top: 17px;
+        margin-left: -35px;
+        margin-right: -35px;
+        border: none;
+        &-divider {
+            display: none;
+        }
+        &-list {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            li {
+                height: 45px;
+                margin-bottom: 0;
+                border-top: 1px solid $bombay;
+                width: 100%;
+                text-align: center;
+                &:last-child {
+                    border-bottom: 1px solid $bombay;
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+    }
+    .btn--mobile_only,
+    a:not(.logo-link) {
+        background: none !important;
+        color: var(--color-opposite);
+        padding: 0;
+        border: none;
+        padding-top: 12px;
+        letter-spacing: unset;
+    }
+}
