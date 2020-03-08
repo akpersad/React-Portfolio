@@ -709,7 +709,7 @@
 @include breakpoint(sm-only) {
     .main-header__nav {
         width: 100vw;
-        background-color: white;
+        background-color: var(--color-bg);
         position: relative;
         top: 17px;
         margin-left: -35px;
@@ -730,8 +730,10 @@
                 margin-bottom: 0;
                 border-top: 1px solid $bombay;
                 width: 100%;
+                padding-top: 12px;
                 text-align: center;
                 &:last-child {
+                    height: 60px;
                     border-bottom: 1px solid $bombay;
                     margin-bottom: 0 !important;
                 }
@@ -746,5 +748,11 @@
         border: none;
         padding-top: 12px;
         letter-spacing: unset;
+    }
+
+    .switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
