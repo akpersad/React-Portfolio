@@ -10,7 +10,7 @@
             background-position: left;
         }
         .image-overlay {
-            background-color: alpha(var(--color-contrast-medium), 0.6);
+            background-color: alpha(var(--color-contrast-medium), 0.8);
             .align-absolute_center {
                 min-height: 500px;
                 height: calc(90vh - 30px);
@@ -28,11 +28,19 @@
                 margin: auto;
                 .header-title,
                 .header-subtitle {
-                    color: var(--color-opposite);
+                    font-family: $DancingScript;
+                    font-size: 4.5em;
+                    color: var(--color-white);
+                    @include breakpoint(sm-only) {
+                        font-size: 3.5em;
+                    }
                 }
                 .header-subtitle {
-                    text-transform: uppercase;
+                    font-family: $Lobster;
                     margin-bottom: 5rem;
+                    @include breakpoint(sm-only) {
+                        font-size: 2.5em;
+                    }
                 }
                 .header-down-arrow {
                     position: absolute;
