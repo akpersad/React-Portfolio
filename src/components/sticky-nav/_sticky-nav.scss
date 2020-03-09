@@ -14,19 +14,22 @@
             li {
                 display: inline-block;
                 margin: 0 10px;
-                a {
+                .sticky-nav_item {
+                    background: no-repeat;
+                    border: none;
                     padding: 10px 0;
                     color: #fff;
                     font-size: 1rem;
                     text-decoration: none;
                     font-weight: bold;
                     transition: all 0.4s ease;
+                    padding: 0 0 5px 0 !important;
                     &:hover {
                         color: #34495e;
                         cursor: pointer;
                     }
                     &.active {
-                        border-bottom: 2px solid #ecf0f1;
+                        border-bottom: 2px solid #ecf0f1 !important;
                     }
                 }
             }
