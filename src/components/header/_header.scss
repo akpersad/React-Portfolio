@@ -114,8 +114,9 @@
             }
             &-divider {
                 @include breakpoint(md) {
-                    height: 1em;
+                    height: 3em;
                     width: 1px;
+                    background-color: var(--color-opposite);
                 }
             }
             &-link {
