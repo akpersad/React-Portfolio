@@ -5,6 +5,10 @@ import { FaGithub } from "react-icons/fa";
 import { MdPhonelink } from "react-icons/md";
 import weddingGif from "../../images/wedding.gif";
 import constants from "../../global/_constants";
+import BlueGeo from "../../images/geometric_blue.jpg";
+import GreenGeo from "../../images/geometric_green.jpg";
+import PinkGeo from "../../images/geometric_pink.jpg";
+import PurpleGeo from "../../images/geometric_purple.jpg";
 
 class Projects extends Component {
 	constructor(props) {
@@ -21,7 +25,8 @@ class Projects extends Component {
 						projectGithub: constants.githubSites.wedding,
 						projectDescription: "Cool description",
 						projectScreenShot: weddingGif
-					}
+					},
+					projectImage: BlueGeo
 				},
 				{
 					"Gulp Portfolio": {
@@ -31,7 +36,8 @@ class Projects extends Component {
 						projectGithub: constants.githubSites.portfolioGulp,
 						projectDescription: "Cool description",
 						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
-					}
+					},
+					projectImage: GreenGeo
 				},
 				{
 					"React Portfolio": {
@@ -41,7 +47,8 @@ class Projects extends Component {
 						projectGithub: constants.githubSites.portfolioReact,
 						projectDescription: "Cool description",
 						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
-					}
+					},
+					projectImage: PinkGeo
 				},
 				{
 					"Chrome Extension": {
@@ -51,7 +58,8 @@ class Projects extends Component {
 						projectGithub: constants.githubSites.chromeExtension,
 						projectDescription: "Cool description",
 						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
-					}
+					},
+					projectImage: PurpleGeo
 				}
 			],
 			modalInfo: {
@@ -72,19 +80,23 @@ class Projects extends Component {
 	projectRender() {
 		const { projects } = this.state;
 		const projectNames = projects.map(item => {
-			return Object.keys(item)[0];
+			return { projName: Object.keys(item)[0], backImage: item.projectImage };
 		});
+
 		return projectNames.map(item => {
+			const divStyle = { backgroundImage: `url(${item.backImage})` };
+
 			return (
 				<button
 					type="button"
 					className="project-item mb-3"
-					data-projectname={item}
-					key={item}
+					data-projectname={item.projName}
+					key={item.projName}
 					onClick={this.projectClick.bind(this)}
 				>
-					<div className="project-item_image">Image Box</div>
-					<div className="project-item_text">{item}</div>
+					<div className="project-item_image" style={divStyle}>
+						{item.projName}
+					</div>
 				</button>
 			);
 		});
@@ -141,7 +153,7 @@ class Projects extends Component {
 					</p>
 				</div>
 
-				<div className="projects-demos">{this.projectRender()}</div>
+				<div className="projects-demos mx-auto">{this.projectRender()}</div>
 
 				<Modal
 					isOpen={showModal}

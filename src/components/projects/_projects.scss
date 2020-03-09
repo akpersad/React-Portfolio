@@ -4,16 +4,26 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
+            max-width: 85%;
             .project-item {
                 flex: 0 0 50%;
+                max-width: 350px;
+                background: none;
+                padding: inherit;
+                border: none;
+                overflow: hidden;
                 @include breakpoint(md) {
                     flex: 0 0 31%;
                 }
                 &_image {
-                    color: var(--color-contrast-lower);
-                    background-image: url(https://loremflickr.com/300/200);
-                    height: 200px;
+                    background-size: cover;
                     background-position: center;
+                    color: var(--color-contrast-lower);
+                    height: 250px;
+                    transition: 0.5s;
+                    &:hover {
+                        transform: scale(1.5);
+                    }
                 }
             }
         }
