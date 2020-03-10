@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactGA from "react-ga";
 
 import Modal from "react-modal";
 import { FaGithub } from "react-icons/fa";
@@ -122,6 +123,11 @@ class Projects extends Component {
 
 		const filtered = modalInformation.filter(function(el) {
 			return el !== null;
+		});
+
+		ReactGA.event({
+			category: "User",
+			action: `Clicked the ${filtered[0].projectName} modal`
 		});
 
 		this.setState({
