@@ -96,7 +96,7 @@ class StickyNav extends Component {
 
 	renderNavItems() {
 		const { sections } = this.state;
-		console.log("Andrew");
+
 		return Object.keys(sections).map(item => {
 			return (
 				<li key={item}>

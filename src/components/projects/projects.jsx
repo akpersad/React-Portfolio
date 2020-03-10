@@ -84,18 +84,21 @@ class Projects extends Component {
 		});
 
 		return projectNames.map(item => {
-			const divStyle = { backgroundImage: `url(${item.backImage})` };
-
 			return (
 				<button
 					type="button"
-					className="project-item mb-3"
+					className="project-container mb-3 mr-3"
 					data-projectname={item.projName}
 					key={item.projName}
 					onClick={this.projectClick.bind(this)}
 				>
-					<div className="project-item_image" style={divStyle}>
-						{item.projName}
+					<img
+						src={item.backImage}
+						alt="Geometric Shapes"
+						className="project-container_image"
+					/>
+					<div className="middle-container">
+						<div className="project-text">{item.projName}</div>
 					</div>
 				</button>
 			);
