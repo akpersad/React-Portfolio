@@ -24,7 +24,8 @@ class Projects extends Component {
 						projectUrl: "google.com",
 						projectTechs: "React, React Router",
 						projectGithub: constants.githubSites.wedding,
-						projectDescription: "Cool description",
+						projectDescription:
+							"This is my wedding website. I decided to build it because it was fun. The end",
 						projectScreenShot: weddingGif
 					},
 					projectImage: BlueGeo
@@ -178,7 +179,7 @@ class Projects extends Component {
 								<h5 className="modal-title">{modalInfo.modalTitle}</h5>
 								<button
 									type="button"
-									className="close"
+									className="close close-btn"
 									data-dismiss="modal"
 									aria-label="Close"
 									onClick={this.closeModal.bind(this)}
@@ -201,25 +202,29 @@ class Projects extends Component {
 								<p>
 									<span>{modalInfo.modalBody}</span>
 								</p>
-								<p>
-									<div className="d-block">
-										<span className="pr-2">Github Link:</span>
+								<p className="d-flex flex-column flex-wrap">
+									<div className="projects-link-container">
+										<span className="project-social_links project-social_links-github ">
+											Github Link:
+										</span>
 										<a
 											href={modalInfo.modalGit}
 											target="_blank"
 											rel="noopener noreferrer"
 										>
-											<FaGithub />
+											<FaGithub size={46} />
 										</a>
 									</div>
-									<div className="d-block">
-										<span className="pr-2">Website:</span>
+									<div className="projects-link-container">
+										<span className="project-social_links project-social_links-web ">
+											Website:
+										</span>
 										<a
 											href={modalInfo.modalUrl}
 											target="_blank"
 											rel="noopener noreferrer"
 										>
-											<MdPhonelink />
+											<MdPhonelink size={46} />
 										</a>
 									</div>
 								</p>

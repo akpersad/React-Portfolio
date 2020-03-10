@@ -45,6 +45,9 @@
                     transform: translate(-50%, -50%);
                     -ms-transform: translate(-50%, -50%);
                     text-align: center;
+                    @include breakpoint(sm-only) {
+                        opacity: 1;
+                    }
                     .project-text {
                         background-color: var(--color-primary);
                         color: var(--color-white);
@@ -78,6 +81,9 @@
     margin: auto;
     .react-modal {
         position: relative;
+        @include breakpoint(sm-only) {
+            top: 15%;
+        }
         &:focus {
             outline: none;
         }
@@ -85,11 +91,28 @@
             max-width: 95%;
             .modal-content {
                 background-color: var(--color-bg);
+                .modal-header {
+                    .close-btn {
+                        color: var(--color-opposite);
+                    }
+                }
                 .modal-body {
                     text-align: center;
                     .modal-image {
                         max-width: 100%;
                         max-height: 50vh;
+                    }
+                    .project-social_links {
+                        font-size: 23px;
+                        @include breakpoint(sm-only) {
+                            font-size: 16px;
+                        }
+                        &-github {
+                            padding-right: 20px;
+                        }
+                        &-web {
+                            padding-right: 50px;
+                        }
                     }
                 }
             }
