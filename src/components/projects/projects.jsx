@@ -4,12 +4,7 @@ import ReactGA from "react-ga";
 import Modal from "react-modal";
 import { FaGithub } from "react-icons/fa";
 import { MdPhonelink } from "react-icons/md";
-import weddingGif from "../../images/wedding.gif";
-import constants from "../../global/_constants";
-import BlueGeo from "../../images/geometric_blue.jpg";
-import GreenGeo from "../../images/geometric_green.jpg";
-import PinkGeo from "../../images/geometric_pink.jpg";
-import PurpleGeo from "../../images/geometric_purple.jpg";
+import projects from "./_projects-obj";
 
 class Projects extends Component {
 	constructor(props) {
@@ -17,53 +12,6 @@ class Projects extends Component {
 
 		this.state = {
 			showModal: false,
-			projects: [
-				{
-					"Wedding Website": {
-						projectName: "Wedding Website",
-						projectUrl: "google.com",
-						projectTechs: "React, React Router",
-						projectGithub: constants.githubSites.wedding,
-						projectDescription:
-							"This is my wedding website. I decided to build it because it was fun. The end",
-						projectScreenShot: weddingGif
-					},
-					projectImage: BlueGeo
-				},
-				{
-					"Gulp Portfolio": {
-						projectName: "Gulp Portfolio",
-						projectUrl: "google.com",
-						projectTechs: "Gulp, SASS",
-						projectGithub: constants.githubSites.portfolioGulp,
-						projectDescription: "Cool description",
-						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
-					},
-					projectImage: GreenGeo
-				},
-				{
-					"React Portfolio": {
-						projectName: "React Portfolio",
-						projectUrl: "google.com",
-						projectTechs: "React, RESTful Api, Express, Node.js",
-						projectGithub: constants.githubSites.portfolioReact,
-						projectDescription: "Cool description",
-						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
-					},
-					projectImage: PinkGeo
-				},
-				{
-					"Chrome Extension": {
-						projectName: "Chrome Extension",
-						projectUrl: "google.com",
-						projectTechs: "Chrome Extension, JavaScript",
-						projectGithub: constants.githubSites.chromeExtension,
-						projectDescription: "Cool description",
-						projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
-					},
-					projectImage: PurpleGeo
-				}
-			],
 			modalInfo: {
 				modalTitle: "modalTitle",
 				modalBody: "modalBody",
@@ -80,7 +28,6 @@ class Projects extends Component {
 	}
 
 	projectRender() {
-		const { projects } = this.state;
 		const projectNames = projects.map(item => {
 			return { projName: Object.keys(item)[0], backImage: item.projectImage };
 		});
@@ -108,7 +55,6 @@ class Projects extends Component {
 	}
 
 	projectClick(event) {
-		const { projects } = this.state;
 		let clickedElement = event.target;
 		while (clickedElement.tagName !== "BUTTON") {
 			clickedElement = clickedElement.parentElement;
@@ -193,17 +139,17 @@ class Projects extends Component {
 									src={modalInfo.modalSS}
 									alt="Screenshot of Project"
 								/>
-								<p>
+								<p className="modal-body_text">
 									<span className="font-weight-bold pr-2">
 										Technologies used:
 									</span>
 									<span>{modalInfo.modalTech}</span>
 								</p>
-								<p>
-									<span>{modalInfo.modalBody}</span>
+								<p className="modal-body_text">
+									<span className="white-space-pre">{modalInfo.modalBody}</span>
 								</p>
-								<p className="d-flex flex-column flex-wrap">
-									<div className="projects-link-container">
+								<p className="d-flex column-row-set justify-content-around flex-wrap">
+									<div className="projects-link-container ml-md-5">
 										<span className="project-social_links project-social_links-github ">
 											Github Link:
 										</span>
@@ -215,7 +161,7 @@ class Projects extends Component {
 											<FaGithub size={46} />
 										</a>
 									</div>
-									<div className="projects-link-container">
+									<div className="projects-link-container mr-md-5">
 										<span className="project-social_links project-social_links-web ">
 											Website:
 										</span>
