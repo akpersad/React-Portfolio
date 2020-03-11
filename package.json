@@ -6,7 +6,7 @@
     "proxy": "http://localhost:3000",
     "scripts": {
         "build": "webpack -p --mode production --watch & ./node_modules/.bin/webpack-dev-server --open --config ./webpack.config.js --mode development",
-        "heroku-postbuild": "webpack -p --mode production & ./node_modules/.bin/webpack-dev-server --config ./webpack.config.js",
+        "heroku-postbuild": "webpack -p --mode production & ./node_modules/.bin/webpack-dev-server --config ./webpack.config.js --mode development",
         "noexpress-start": "./node_modules/.bin/webpack -p --mode production",
         "start": "nodemon --exec babel-node src/server.js",
         "dev": "nodemon --exec babel-node -r dotenv/config src/server.js",
