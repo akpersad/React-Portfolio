@@ -82,7 +82,7 @@
     .react-modal {
         position: relative;
         @include breakpoint(sm-only) {
-            top: 15%;
+            top: 1%;
         }
         &:focus {
             outline: none;
@@ -90,6 +90,8 @@
         .modal-dialog {
             max-width: 95%;
             .modal-content {
+                max-height: 90vh;
+                overflow: scroll;
                 background-color: var(--color-bg);
                 .modal-header {
                     .close-btn {
@@ -99,9 +101,14 @@
                 .modal-body {
                     text-align: center;
                     .modal-image {
-                        max-width: 100vw;
-                        max-height: 50vh;
-                        width: 60%;
+                        max-width: 85vw;
+                        max-height: 45vh;
+                    }
+                    .column-row-set {
+                        flex-direction: row;
+                        @include breakpoint(sm-only) {
+                            flex-direction: column;
+                        }
                     }
                     .modal-body_text {
                         width: 75%;

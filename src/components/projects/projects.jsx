@@ -139,7 +139,7 @@ class Projects extends Component {
 									src={modalInfo.modalSS}
 									alt="Screenshot of Project"
 								/>
-								<p>
+								<p className="modal-body_text">
 									<span className="font-weight-bold pr-2">
 										Technologies used:
 									</span>
@@ -148,8 +148,8 @@ class Projects extends Component {
 								<p className="modal-body_text">
 									<span className="white-space-pre">{modalInfo.modalBody}</span>
 								</p>
-								<p className="d-flex flex-column flex-wrap">
-									<div className="projects-link-container">
+								<p className="d-flex column-row-set justify-content-around flex-wrap">
+									<div className="projects-link-container ml-md-5">
 										<span className="project-social_links project-social_links-github ">
 											Github Link:
 										</span>
@@ -161,7 +161,7 @@ class Projects extends Component {
 											<FaGithub size={46} />
 										</a>
 									</div>
-									<div className="projects-link-container">
+									<div className="projects-link-container mr-md-5">
 										<span className="project-social_links project-social_links-web ">
 											Website:
 										</span>

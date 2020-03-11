@@ -1,4 +1,7 @@
 import weddingGif from "../../images/wedding.gif";
+import gulpGif from "../../images/gulp.gif";
+import portfolioGif from "../../images/portfolio.gif";
+import chromeImage from "../../images/chrome.png";
 import constants from "../../global/_constants";
 import BlueGeo from "../../images/geometric_blue.jpg";
 import GreenGeo from "../../images/geometric_green.jpg";
@@ -32,7 +35,7 @@ const projects = [
 				"I started this project to help teach myself Gulp. I wanted to learn about build packs and decided to start with that. " +
 				"It also served as the beginning of this very site. I began brainstorming how and what I wanted my portfolio to be. The " +
 				"site is rendered completely on the client side and optimized for quickest and most efficient load.",
-			projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
+			projectScreenShot: gulpGif
 		},
 		projectImage: GreenGeo
 	},
@@ -46,7 +49,7 @@ const projects = [
 				"This very site. While I started my portfolio in a Gulp build, I decided to switch over to a React/Webpack build in order to " +
 				"get experience with setting up a webpack config from scratch. I also added a Node.JS/Express backend in order to send emails " +
 				"in the contact form. The website also offers the user the ability to choose between two color patterns, similiar to a light/dark mode.",
-			projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
+			projectScreenShot: portfolioGif
 		},
 		projectImage: PinkGeo
 	},
@@ -59,7 +62,7 @@ const projects = [
 			projectDescription:
 				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
 				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
-			projectScreenShot: "https://i.picsum.photos/id/431/3360/1768.jpg?blur=1"
+			projectScreenShot: chromeImage
 		},
 		projectImage: PurpleGeo
 	}
