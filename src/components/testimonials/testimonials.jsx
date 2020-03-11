@@ -32,7 +32,7 @@ class Testimonials extends Component {
 
 		return (
 			<div className="testimonials-container">
-				<h2>Testimonials</h2>
+				<h3>Testimonials</h3>
 				{/* eslint-disable-next-line react/jsx-props-no-spreading */}
 				<Slider {...settings}>{this.renderSliderItem()}</Slider>
 			</div>

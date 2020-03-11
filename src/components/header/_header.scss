@@ -741,14 +741,16 @@
             }
         }
     }
-    .btn--mobile_only,
-    a:not(.logo-link) {
-        background: none !important;
-        color: var(--color-opposite);
-        padding: 0;
-        border: none;
-        padding-top: 12px;
-        letter-spacing: unset;
+    .main-header {
+        .btn--mobile_only,
+        a:not(.logo-link) {
+            background: none !important;
+            color: var(--color-opposite);
+            padding: 0;
+            border: none;
+            padding-top: 12px;
+            letter-spacing: unset;
+        }
     }
 
     .switch {

@@ -96,12 +96,11 @@ class StickyNav extends Component {
 
 	renderNavItems() {
 		const { sections } = this.state;
-		console.log("Andrew");
+
 		return Object.keys(sections).map(item => {
 			return (
-				<li>
+				<li key={item}>
 					<button
-						key={item}
 						className={`${sections[item]} sticky-nav_item`}
 						onClick={this.scrollToElement.bind(this)}
 						type="button"
