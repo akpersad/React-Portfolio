@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import Favicon from "react-favicon";
 import ReactGA from "react-ga";
-// import { getIP } from "./global/_getIP";
+import { getIP } from "./global/_getIP";
 
 import FaviconImage from "./images/logo.svg";
 
@@ -18,21 +18,20 @@ import Testimonials from "./components/testimonials/testimonials";
 
 const trackingId = "UA-36788567-8";
 ReactGA.initialize(trackingId, {
-	cookieDomain: "auto",
-	testMode: true
+	cookieDomain: "auto"
 });
 class App extends Component {
-	// componentDidMount() {
-	// 	getIP.then(response => {
-	// 		ReactGA.set({
-	// 			dimension1: response.ip, // userIP
-	// 			dimension2: response.city, // userCity
-	// 			dimension3: response.state, // userState
-	// 			dimension4: response.referral // userReferral
-	// 		});
-	// 		ReactGA.pageview(window.location.pathname + window.location.search);
-	// 	});
-	// }
+	componentDidMount() {
+		getIP.then(response => {
+			ReactGA.set({
+				dimension1: response.ip, // userIP
+				dimension2: response.city, // userCity
+				dimension3: response.state, // userState
+				dimension4: response.referral // userReferral
+			});
+			ReactGA.pageview(window.location.pathname + window.location.search);
+		});
+	}
 
 	render() {
 		return (
