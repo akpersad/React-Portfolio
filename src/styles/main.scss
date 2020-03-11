@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes|Dancing+Script|Lobster|Open+Sans|Ubuntu&display=swap");
 @import "~bootstrap/scss/bootstrap";
 
 // Globals
@@ -17,6 +18,24 @@
 @import "./partials/visibility";
 @import "./partials/accessibility";
 @import "./partials/imported";
+
+@import "../components/header/header";
+@import "../components/welcome-component/welcome-component";
+@import "../components/sticky-nav/sticky-nav";
+@import "../components/projects/projects";
+@import "../components/shapes/shapes";
+@import "../components/submit-form/submit-form";
+@import "../components/footer/footer";
+@import "../components/about-me/about-me";
+@import "../components/testimonials/testimonials";
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+body {
+    transition: $transition-time;
+    background-color: var(--color-bg);
+}
 
 #root {
     font-family: $OpenSans;
