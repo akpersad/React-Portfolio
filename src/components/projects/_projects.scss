@@ -99,8 +99,18 @@
                 .modal-body {
                     text-align: center;
                     .modal-image {
-                        max-width: 100%;
+                        max-width: 100vw;
                         max-height: 50vh;
+                        width: 60%;
+                    }
+                    .modal-body_text {
+                        width: 75%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        font-size: 0.8em;
+                        .white-space-pre {
+                            white-space: pre-line;
+                        }
                     }
                     .project-social_links {
                         font-size: 23px;

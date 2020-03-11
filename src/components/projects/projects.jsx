@@ -145,8 +145,8 @@ class Projects extends Component {
 									</span>
 									<span>{modalInfo.modalTech}</span>
 								</p>
-								<p>
-									<span>{modalInfo.modalBody}</span>
+								<p className="modal-body_text">
+									<span className="white-space-pre">{modalInfo.modalBody}</span>
 								</p>
 								<p className="d-flex flex-column flex-wrap">
 									<div className="projects-link-container">
