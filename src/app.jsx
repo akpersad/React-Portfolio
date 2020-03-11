@@ -50,7 +50,7 @@ class App extends Component {
 					</div>
 
 					<div className="sections">
-						<section className="section-parts" id="one">
+						<section className="section-parts" id="section_about-me">
 							<div className="h-100" id="shapes">
 								<AboutMe />
 							</div>
@@ -58,7 +58,7 @@ class App extends Component {
 					</div>
 
 					<div className="sections">
-						<section className="section-parts" id="two">
+						<section className="section-parts" id="section_projects">
 							<div id="projects">
 								<Projects />
 							</div>
@@ -66,12 +66,12 @@ class App extends Component {
 					</div>
 
 					<div className="sections">
-						<section className="section-parts" id="three">
+						<section className="section-parts" id="section_testimonials">
 							<Testimonials />
 						</section>
 					</div>
 				</div>
-				<div className="footer-component">
+				<div className="footer-component" id="section_footer">
 					<Footer />
 				</div>
 			</>

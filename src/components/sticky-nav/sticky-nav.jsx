@@ -3,6 +3,17 @@ import React, { Component } from "react";
 import { addClass, removeClass } from "../../global/_util";
 
 class StickyNav extends Component {
+	constructor() {
+		super();
+		this.state = {
+			sections: {
+				"About Me": "section_about-me",
+				Projects: "section_projects",
+				Testimonials: "section_testimonials"
+			}
+		};
+	}
+
 	componentDidMount() {
 		const sections = document.querySelectorAll("section.section-parts");
 		const nav = document.querySelector("#sticky-nav_nav");
@@ -48,17 +59,17 @@ class StickyNav extends Component {
 		for (let i = 0; i < len; i++) {
 			const top = this.sections[i].offsetTop - this.navHeight;
 			const bottom = top + this.sections[i].offsetHeight;
-			const anchorTags = this.nav.querySelectorAll("a");
+			const anchorTags = this.nav.querySelectorAll("button");
 
 			if (curPos >= top && curPos <= bottom) {
 				for (let j = 0; j < anchorTags.length; j++) {
 					removeClass(anchorTags[j], "active");
 				}
-				const temp1 = `a.${this.sections[i].id}`;
+				const temp1 = `button.${this.sections[i].id}`;
 				addClass(document.querySelector(temp1), "active");
 			} else if (this.isScrolledBottom()) {
 				removeClass(anchorTags[len - 2], "active");
-				const temp2 = `a.${this.sections[len - 1].id}`;
+				const temp2 = `button.${this.sections[len - 1].id}`;
 				addClass(document.querySelector(temp2), "active");
 			}
 		}
@@ -83,62 +94,30 @@ class StickyNav extends Component {
 		});
 	}
 
+	renderNavItems() {
+		const { sections } = this.state;
+
+		return Object.keys(sections).map(item => {
+			return (
+				<li key={item}>
+					<button
+						className={`${sections[item]} sticky-nav_item`}
+						onClick={this.scrollToElement.bind(this)}
+						type="button"
+						data-scrollto={sections[item]}
+					>
+						{item}
+					</button>
+				</li>
+			);
+		});
+	}
+
 	render() {
 		return (
 			<div className="sticky-nav-container">
 				<nav id="sticky-nav_nav">
-					<ul>
-						<li>
-							<a
-								className="one"
-								onClick={this.scrollToElement.bind(this)}
-								href="#/"
-								data-scrollto="one"
-							>
-								First
-							</a>
-						</li>
-						<li>
-							<a
-								className="two"
-								onClick={this.scrollToElement.bind(this)}
-								href="#/"
-								data-scrollto="two"
-							>
-								Second
-							</a>
-						</li>
-						<li>
-							<a
-								className="three"
-								onClick={this.scrollToElement.bind(this)}
-								href="#/"
-								data-scrollto="three"
-							>
-								Third
-							</a>
-						</li>
-						<li>
-							<a
-								className="four"
-								onClick={this.scrollToElement.bind(this)}
-								href="#/"
-								data-scrollto="four"
-							>
-								Fourth
-							</a>
-						</li>
-						<li>
-							<a
-								className="five"
-								onClick={this.scrollToElement.bind(this)}
-								href="#/"
-								data-scrollto="five"
-							>
-								Fifth
-							</a>
-						</li>
-					</ul>
+					<ul>{this.renderNavItems()}</ul>
 				</nav>
 			</div>
 		);
