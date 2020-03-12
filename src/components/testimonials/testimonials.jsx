@@ -14,6 +14,7 @@ class Testimonials extends Component {
 					key={item.name}
 					image={item.image}
 					name={item.name}
+					company={item.company}
 					jobTitle={item.jobTitle}
 					details={item.details}
 				/>
