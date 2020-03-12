@@ -128,7 +128,7 @@ class Header extends Component {
 						<div className="main-header__layout d-flex flex-wrap justify-content-between">
 							<img id="logo-comp" src={Logo} alt="Logo" />
 							<div className="main-header__logo">
-								<a href="#0" className="logo-link">
+								<div className="logo-link">
 									<svg width="130" height="32" viewBox="0 0 130 32">
 										<title>Go to homepage</title>
 										<circle
@@ -145,7 +145,7 @@ class Header extends Component {
 											height="10"
 										/>
 									</svg>
-								</a>
+								</div>
 							</div>
 
 							<button
