@@ -188,8 +188,12 @@ class SubmitForm extends Component {
 				{isLoading && !messageSent && <RingLoader left="50%" color="orange" size={350} />}
 
 				{messageSent && (
-					<div>
-						<p>Your message has been sent</p>
+					<div className="h-100">
+						<p className="align-middle-text">
+							Thanks!
+							<br />
+							Your message has been sent.
+						</p>
 					</div>
 				)}
 			</>

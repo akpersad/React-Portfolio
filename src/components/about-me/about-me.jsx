@@ -22,7 +22,7 @@ class AboutMe extends Component {
 						<span className="d-block mb-4">
 							I&apos;ve worked closely with design teams, functional folks and
 							directly with clients to deliver responsive and beautiful sites.
-							I&apos;ve led teams both with me onsite and both off/near shore.
+							I&apos;ve led teams both onsite and off/near shore.
 						</span>
 						<span className="d-block mb-4">
 							I love building, learning and doing. Let&apos;s work together and make
