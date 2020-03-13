@@ -10,20 +10,18 @@ import PurpleGeo from "../../images/geometric_purple.jpg";
 
 const projects = [
 	{
-		"Wedding Website": {
-			projectName: constants.projectName.wedding,
-			projectUrl: constants.projectURLs.wedding,
-			projectTechs:
-				"React, React Router, Third Party Integrations, Webpack, Babel, SASS/SCSS",
-			projectGithub: constants.githubSites.wedding,
+		"Chrome Extension": {
+			projectName: constants.projectName.chrome,
+			projectUrl: constants.projectURLs.chrome,
+			projectTechs: "Chrome Extension, JavaScript",
+			projectGithub: constants.githubSites.chromeExtension,
 			projectDescription:
-				"While exploring websites like Zola and The Knot, I tried to use their templates to build our wedding website. " +
-				"I found myself getting frustrated with their limitations and more than once saying 'I could do this on my own'. " +
-				"So I decided to! While we're in the middle of one of the most stressful planning events of our lives, it's nice to " +
-				"be able to focus on something I enjoy and get it done how I wanted to.",
-			projectScreenShot: weddingGif
+				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
+				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
+			projectScreenShot: chromeImage,
+			clientWork: false
 		},
-		projectImage: BlueGeo
+		projectImage: PurpleGeo
 	},
 	{
 		"Gulp Build": {
@@ -35,10 +33,12 @@ const projects = [
 				"I started this project to help teach myself Gulp. I wanted to learn about build packs and decided to start with that. " +
 				"It also served as the beginning of this very site. I began brainstorming how and what I wanted my portfolio to be. The " +
 				"site is rendered completely on the client side and optimized for quickest and most efficient load.",
-			projectScreenShot: gulpGif
+			projectScreenShot: gulpGif,
+			clientWork: false
 		},
 		projectImage: GreenGeo
 	},
+
 	{
 		Portfolio: {
 			projectName: constants.projectName.react,
@@ -49,22 +49,27 @@ const projects = [
 				"This very site. While I started my portfolio in a Gulp build, I decided to switch over to a React/Webpack build in order to " +
 				"get experience with setting up a webpack config from scratch. I also added a Node.JS/Express backend in order to send emails " +
 				"in the contact form. The website also offers the user the ability to choose between two color patterns, similiar to a light/dark mode.",
-			projectScreenShot: portfolioGif
+			projectScreenShot: portfolioGif,
+			clientWork: false
 		},
 		projectImage: PinkGeo
 	},
 	{
-		"Chrome Extension": {
-			projectName: constants.projectName.chrome,
-			projectUrl: constants.projectURLs.chrome,
-			projectTechs: "Chrome Extension, JavaScript",
-			projectGithub: constants.githubSites.chromeExtension,
+		"Wedding Website": {
+			projectName: constants.projectName.wedding,
+			projectUrl: constants.projectURLs.wedding,
+			projectTechs:
+				"React, React Router, Third Party Integrations, Webpack, Babel, SASS/SCSS",
+			projectGithub: constants.githubSites.wedding,
 			projectDescription:
-				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
-				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
-			projectScreenShot: chromeImage
+				"While exploring websites like Zola and The Knot, I tried to use their templates to build our wedding website. " +
+				"I found myself getting frustrated with their limitations and more than once saying 'I could do this on my own'. " +
+				"So I decided to! While we're in the middle of one of the most stressful planning events of our lives, it's nice to " +
+				"be able to focus on something I enjoy and get it done how I wanted to.",
+			projectScreenShot: weddingGif,
+			clientWork: false
 		},
-		projectImage: PurpleGeo
+		projectImage: BlueGeo
 	}
 ];
 

@@ -181,3 +181,14 @@ export const randomIdGen = () => {
 	return Math.floor(Math.random() * Math.floor(999));
 	// "https://i.picsum.photos/id/815/3360/1768.jpg?blur=1"
 };
+
+export const sortObj = object => {
+	const ordered = {};
+	Object.keys(object)
+		.sort()
+		.forEach(function(key) {
+			ordered[key] = object[key];
+		});
+
+	return object;
+};
