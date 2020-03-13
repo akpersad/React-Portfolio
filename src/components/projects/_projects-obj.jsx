@@ -10,6 +10,34 @@ import PurpleGeo from "../../images/geometric_purple.jpg";
 
 const projects = [
 	{
+		Bose: {
+			projectName: constants.projectName.bose,
+			projectUrl: constants.projectURLs.bose,
+			projectGithub: "N/A",
+			projectTechs: "Chrome Extension, JavaScript",
+			projectDescription:
+				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
+				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
+			projectScreenShot: chromeImage,
+			clientWork: true
+		},
+		projectImage: PurpleGeo
+	},
+	{
+		"David Yurman": {
+			projectName: constants.projectName.davidYurman,
+			projectUrl: constants.projectURLs.davidYurman,
+			projectGithub: "N/A",
+			projectTechs: "Chrome Extension, JavaScript",
+			projectDescription:
+				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
+				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
+			projectScreenShot: chromeImage,
+			clientWork: true
+		},
+		projectImage: PurpleGeo
+	},
+	{
 		"Chrome Extension": {
 			projectName: constants.projectName.chrome,
 			projectUrl: constants.projectURLs.chrome,

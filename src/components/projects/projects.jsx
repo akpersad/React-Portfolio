@@ -18,7 +18,8 @@ class Projects extends Component {
 				modalTech: "modalTech",
 				modalSS: "modalSS",
 				modalGit: "modalGit",
-				modalUrl: "modalUrl"
+				modalUrl: "modalUrl",
+				modalClientWork: false
 			}
 		};
 	}
@@ -84,7 +85,8 @@ class Projects extends Component {
 				modalGit: filtered[0].projectGithub,
 				modalTech: filtered[0].projectTechs,
 				modalSS: filtered[0].projectScreenShot,
-				modalUrl: filtered[0].projectUrl
+				modalUrl: filtered[0].projectUrl,
+				modalClientWork: filtered[0].clientWork
 			}
 		});
 		this.setState({ showModal: true });
@@ -149,18 +151,20 @@ class Projects extends Component {
 									<span className="white-space-pre">{modalInfo.modalBody}</span>
 								</p>
 								<p className="d-flex column-row-set justify-content-around flex-wrap">
-									<div className="projects-link-container ml-md-5">
-										<span className="project-social_links project-social_links-github ">
-											Github Link:
-										</span>
-										<a
-											href={modalInfo.modalGit}
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											<FaGithub size={46} />
-										</a>
-									</div>
+									{!modalInfo.modalClientWork && (
+										<div className="projects-link-container ml-md-5">
+											<span className="project-social_links project-social_links-github ">
+												Github Link:
+											</span>
+											<a
+												href={modalInfo.modalGit}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<FaGithub size={46} />
+											</a>
+										</div>
+									)}
 									<div className="projects-link-container mr-md-5">
 										<span className="project-social_links project-social_links-web ">
 											Website:
