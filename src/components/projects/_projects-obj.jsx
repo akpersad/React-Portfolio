@@ -1,12 +1,16 @@
 import weddingGif from "../../images/wedding.gif";
 import gulpGif from "../../images/gulp.gif";
 import portfolioGif from "../../images/portfolio.gif";
+import BoseGif from "../../images/bose.gif";
+import DYGif from "../../images/davidYurman.gif";
 import chromeImage from "../../images/chrome.png";
 import constants from "../../global/_constants";
 import BlueGeo from "../../images/geometric_blue.jpg";
 import GreenGeo from "../../images/geometric_green.jpg";
 import PinkGeo from "../../images/geometric_pink.jpg";
 import PurpleGeo from "../../images/geometric_purple.jpg";
+import OrangeGeo from "../../images/geometric_orange.jpg";
+import RedGeo from "../../images/geometric_red.jpg";
 
 const projects = [
 	{
@@ -18,10 +22,10 @@ const projects = [
 			projectDescription:
 				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
 				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
-			projectScreenShot: chromeImage,
+			projectScreenShot: BoseGif,
 			clientWork: true
 		},
-		projectImage: PurpleGeo
+		projectImage: OrangeGeo
 	},
 	{
 		"David Yurman": {
@@ -32,10 +36,10 @@ const projects = [
 			projectDescription:
 				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
 				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
-			projectScreenShot: chromeImage,
+			projectScreenShot: DYGif,
 			clientWork: true
 		},
-		projectImage: PurpleGeo
+		projectImage: RedGeo
 	},
 	{
 		"Chrome Extension": {
