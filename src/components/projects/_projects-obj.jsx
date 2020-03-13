@@ -18,7 +18,7 @@ const projects = [
 			projectName: constants.projectName.bose,
 			projectUrl: constants.projectURLs.bose,
 			projectGithub: "N/A",
-			projectTechs: "Chrome Extension, JavaScript",
+			projectTechs: "React, Redux, Adobe Experience Manager",
 			projectDescription:
 				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
 				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
@@ -32,14 +32,14 @@ const projects = [
 			projectName: constants.projectName.davidYurman,
 			projectUrl: constants.projectURLs.davidYurman,
 			projectGithub: "N/A",
-			projectTechs: "Chrome Extension, JavaScript",
+			projectTechs: "React, Adobe Experience Manager, D3.js",
 			projectDescription:
 				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
 				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
 			projectScreenShot: DYGif,
 			clientWork: true
 		},
-		projectImage: RedGeo
+		projectImage: PinkGeo
 	},
 	{
 		"Chrome Extension": {
@@ -84,7 +84,7 @@ const projects = [
 			projectScreenShot: portfolioGif,
 			clientWork: false
 		},
-		projectImage: PinkGeo
+		projectImage: RedGeo
 	},
 	{
 		"Wedding Website": {
