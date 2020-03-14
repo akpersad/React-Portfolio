@@ -18,10 +18,11 @@ const projects = [
 			projectName: constants.projectName.bose,
 			projectUrl: constants.projectURLs.bose,
 			projectGithub: "N/A",
-			projectTechs: "React, Redux, Adobe Experience Manager",
+			projectTechs: "React, Adobe Experience Manager, D3.js",
 			projectDescription:
-				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
-				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
+				"Bose came to us to help revitalize their flagship product. We focused our efforts on two fronts; the Product Details" +
+				" Page and Color Customization page. My team ensured the PDP finished product was a beautiful and responsive page that " +
+				"worked well on both web and mobile.",
 			projectScreenShot: BoseGif,
 			clientWork: true
 		},
@@ -32,10 +33,12 @@ const projects = [
 			projectName: constants.projectName.davidYurman,
 			projectUrl: constants.projectURLs.davidYurman,
 			projectGithub: "N/A",
-			projectTechs: "React, Adobe Experience Manager, D3.js",
+			projectTechs: "React, Redux, Adobe Experience Manager",
 			projectDescription:
-				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
-				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
+				"David Yurman hired us to redesign their ecommerce website. When I ooined the project, I helped with engraveable pinky " +
+				"ring section. We allowed customers to see the pinky ring in their chioce of metal and to see the engraving they wanted " +
+				"reflected directly on the image.",
+
 			projectScreenShot: DYGif,
 			clientWork: true
 		},
