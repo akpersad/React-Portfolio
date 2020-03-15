@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FaTwitter, FaLinkedinIn, FaSalesforce, FaGithub } from "react-icons/fa";
 import ReactGA from "react-ga";
+import axios from "axios";
 
 import constants from "../../global/_constants";
 import SubmitForm from "../submit-form/submit-form";
@@ -53,19 +54,12 @@ class Footer extends Component {
 	fetchQuote() {
 		const backupQuote = "Only those who dare to fail greatly can ever achieve greatly.";
 		const url = "https://quotes.rest/qod";
-		fetch(url)
+		axios
+			.get(url)
 			.then(results => {
-				results
-					.json()
-					.then(jsonResults => {
-						this.setState({ quote: jsonResults.contents.quotes[0].quote });
-						window.localStorage.setItem("quote", jsonResults.contents.quotes[0].quote);
-						window.localStorage.setItem("quoteDate", new Date());
-					})
-					.catch(err => {
-						console.log(err);
-						this.setState({ quote: backupQuote });
-					});
+				this.setState({ quote: results.data.contents.quotes[0].quote });
+				window.localStorage.setItem("quote", results.data.contents.quotes[0].quote);
+				window.localStorage.setItem("quoteDate", new Date());
 			})
 			.catch(err => {
 				console.log(err);
