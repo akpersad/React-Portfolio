@@ -54,20 +54,6 @@
     }
 }
 
-.form-legend {
-    color: var(--color-contrast-higher);
-    line-height: 1.2;
-    font-size: var(--text-md);
-    margin-bottom: var(--space-xxs);
-}
-
-.form-label {
-    // label style
-    display: inline-block;
-    font-size: var(--text-sm);
-    margin-bottom: var(--space-xxxs);
-}
-
 // error message
 .form__msg-error {
     background-color: var(--color-error);
@@ -95,42 +81,4 @@
 .form__msg-error--is-visible {
     position: relative;
     clip: auto;
-}
-
-// radio and checkbox lists
-.radio-list,
-.checkbox-list {
-    > * {
-        position: relative;
-        display: flex;
-        align-items: baseline;
-        margin-bottom: var(--space-xxs);
-    }
-
-    > *:last-of-type {
-        margin-bottom: 0;
-    }
-
-    label {
-        // radio/checkbox labels
-        line-height: var(--body-line-height);
-        user-select: none;
-    }
-
-    input {
-        vertical-align: top;
-        margin-right: var(--space-xxxs);
-        flex-shrink: 0;
-    }
-
-    &.radio-list--inline,
-    &.checkbox-list--inline {
-        // inline distribution for checkboxes and radio buttons
-        display: flex;
-        margin-bottom: calc(-1 * var(--space-md));
-
-        > * {
-            margin: 0 var(--space-md) var(--space-md) 0;
-        }
-    }
 }

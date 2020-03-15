@@ -43,7 +43,7 @@
             }
         }
 
-        a.logo-link {
+        .logo-link {
             @include breakpoint(sm-only) {
                 display: none;
             }

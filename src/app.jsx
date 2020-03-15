@@ -18,7 +18,8 @@ import Testimonials from "./components/testimonials/testimonials";
 
 const trackingId = "UA-36788567-8";
 ReactGA.initialize(trackingId, {
-	cookieDomain: "auto"
+	cookieDomain: "auto",
+	testMode: true
 });
 class App extends Component {
 	componentDidMount() {

@@ -34,55 +34,9 @@
     border: 1px solid var(--color-contrast-low);
 }
 
-.btn--accent {
-    // used to draw particular attention to the button (e.g. destructive actions)
-    background-color: var(--color-accent);
-    color: var(--color-white);
-    @include fontSmooth;
-}
-
-// feedback
-.btn--disabled {
-    cursor: not-allowed;
-    box-shadow: none;
-    opacity: 0.6;
-}
-
-// size
-.btn--sm {
-    font-size: var(--btn-sm);
-}
-
-.btn--md {
-    font-size: var(--btn-md);
-}
-
-.btn--lg {
-    font-size: var(--btn-lg);
-}
-
-.btn--full-width {
-    display: flex;
-    width: 100%;
-}
-
 // icons
 .btn .icon {
     // icon inherits color of button label
     color: inherit;
     flex-shrink: 0;
-}
-
-// icons + text
-.btn--icon-text {
-    align-items: center;
-
-    > *:nth-child(2) {
-        margin-left: var(--space-xxs);
-    }
-}
-
-// btn with icon (only)
-.btn--icon {
-    padding: var(--space-xs);
 }
