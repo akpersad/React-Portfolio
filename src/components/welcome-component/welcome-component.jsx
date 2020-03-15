@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import BackgroundImage from "../../images/802.jpg";
+import constants from "../../global/_constants";
 
 class WelcomeComponent extends Component {
 	componentDidMount() {
 		document.querySelector(
 			".welcome-comp-container"
-		).style.backgroundImage = `url(${BackgroundImage})`;
+		).style.backgroundImage = `url(${constants.images[802]})`;
 	}
 
 	render() {

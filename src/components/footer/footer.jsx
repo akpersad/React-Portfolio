@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FaTwitter, FaLinkedinIn, FaSalesforce, FaGithub } from "react-icons/fa";
 import ReactGA from "react-ga";
-import Legos from "../../images/legos.gif";
 
 import constants from "../../global/_constants";
 import SubmitForm from "../submit-form/submit-form";
@@ -70,7 +69,11 @@ class Footer extends Component {
 						<h4>Let&apos;s Connect!</h4>
 						<p>Drop me a line and let&apos;s start building!</p>
 						<p>
-							<img className="footer-image" src={Legos} alt="Lego Blocks Building" />
+							<img
+								className="footer-image"
+								src={constants.images.legos}
+								alt="Lego Blocks Building"
+							/>
 						</p>
 					</div>
 
