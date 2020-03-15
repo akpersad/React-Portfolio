@@ -1,16 +1,4 @@
-import weddingGif from "../../images/wedding.gif";
-import gulpGif from "../../images/gulp.gif";
-import portfolioGif from "../../images/portfolio.gif";
-import BoseGif from "../../images/bose.gif";
-import DYGif from "../../images/davidYurman.gif";
-import chromeImage from "../../images/chrome.png";
 import constants from "../../global/_constants";
-import BlueGeo from "../../images/geometric_blue.jpg";
-import GreenGeo from "../../images/geometric_green.jpg";
-import PinkGeo from "../../images/geometric_pink.jpg";
-import PurpleGeo from "../../images/geometric_purple.jpg";
-import OrangeGeo from "../../images/geometric_orange.jpg";
-import RedGeo from "../../images/geometric_red.jpg";
 
 const projects = [
 	{
@@ -23,10 +11,10 @@ const projects = [
 				"Bose came to us to help revitalize their flagship product. We focused our efforts on two fronts; the Product Details" +
 				" Page and Color Customization page. My team ensured the PDP finished product was a beautiful and responsive page that " +
 				"worked well on both web and mobile.",
-			projectScreenShot: BoseGif,
+			projectScreenShot: constants.images.bose,
 			clientWork: true
 		},
-		projectImage: OrangeGeo
+		projectImage: constants.images.geometric_orange
 	},
 	{
 		"David Yurman": {
@@ -39,10 +27,10 @@ const projects = [
 				"ring section. We allowed customers to see the pinky ring in their chioce of metal and to see the engraving they wanted " +
 				"reflected directly on the image.",
 
-			projectScreenShot: DYGif,
+			projectScreenShot: constants.images.davidYurman,
 			clientWork: true
 		},
-		projectImage: PinkGeo
+		projectImage: constants.images.geometric_pink
 	},
 	{
 		"Chrome Extension": {
@@ -53,10 +41,10 @@ const projects = [
 			projectDescription:
 				"To run their local files and changes, one of my clients was manually appending a string to their URLs. I built a " +
 				"chrome extension used by the entire company to easily run their local host without having to manually add and edit the URL.",
-			projectScreenShot: chromeImage,
+			projectScreenShot: constants.images.chrome,
 			clientWork: false
 		},
-		projectImage: PurpleGeo
+		projectImage: constants.images.geometric_purple
 	},
 	{
 		"Gulp Build": {
@@ -68,10 +56,10 @@ const projects = [
 				"I started this project to help teach myself Gulp. I wanted to learn about build packs and decided to start with that. " +
 				"It also served as the beginning of this very site. I began brainstorming how and what I wanted my portfolio to be. The " +
 				"site is rendered completely on the client side and optimized for quickest and most efficient load.",
-			projectScreenShot: gulpGif,
+			projectScreenShot: constants.images.gulp,
 			clientWork: false
 		},
-		projectImage: GreenGeo
+		projectImage: constants.images.geometric_green
 	},
 
 	{
@@ -84,10 +72,10 @@ const projects = [
 				"This very site. While I started my portfolio in a Gulp build, I decided to switch over to a React/Webpack build in order to " +
 				"get experience with setting up a webpack config from scratch. I also added a Node.JS/Express backend in order to send emails " +
 				"in the contact form. The website also offers the user the ability to choose between two color patterns, similiar to a light/dark mode.",
-			projectScreenShot: portfolioGif,
+			projectScreenShot: constants.images.portfolio,
 			clientWork: false
 		},
-		projectImage: RedGeo
+		projectImage: constants.images.geometric_red
 	},
 	{
 		"Wedding Website": {
@@ -101,10 +89,10 @@ const projects = [
 				"I found myself getting frustrated with their limitations and more than once saying 'I could do this on my own'. " +
 				"So I decided to! While we're in the middle of one of the most stressful planning events of our lives, it's nice to " +
 				"be able to focus on something I enjoy and get it done how I wanted to.",
-			projectScreenShot: weddingGif,
+			projectScreenShot: constants.images.wedding,
 			clientWork: false
 		},
-		projectImage: BlueGeo
+		projectImage: constants.images.geometric_blue
 	}
 ];
 

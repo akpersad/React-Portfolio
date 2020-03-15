@@ -10,7 +10,7 @@ class SliderItem extends Component {
 				<div className="testimonial-container">
 					<div className="d-flex flex-column justify-content-center align-item-center text-center">
 						<div className="flex-image">
-							<img src={image} alt="Bodhi" />
+							<img src={image} alt="Testimonial Person" />
 						</div>
 
 						<div className="flex-name mt-4">{name}</div>

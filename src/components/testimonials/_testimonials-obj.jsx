@@ -1,6 +1,6 @@
-import Bodhi from "../../images/bodhi.png";
-import Anne from "../../images/girl.svg";
-import Harsha from "../../images/boy.svg";
+import constants from "../../global/_constants";
+import Anne from "../../svg/girl.svg";
+import Harsha from "../../svg/boy.svg";
 
 const testimonials = [
 	{
@@ -20,7 +20,7 @@ const testimonials = [
 			"\"One of my favorite devs to work wtih. Andrew's curiosity and excitment are so genuine, it's impossible to not be infected by it.\""
 	},
 	{
-		image: Bodhi,
+		image: constants.images.bodhi,
 		name: "Bodhi",
 		jobTitle: "Dog",
 		company: "🦴",

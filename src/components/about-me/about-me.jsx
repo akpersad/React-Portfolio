@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Hero from "../../images/hero_image.svg";
+import Hero from "../../svg/hero_image.svg";
 import { loadSvg } from "../../global/_importSVG";
 
 class AboutMe extends Component {
