@@ -29,6 +29,27 @@ const constants = {
 			"https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html#v=qc35_ii_black",
 		davidYurman:
 			"https://www.davidyurman.com/products/womens/womens-rings/engravable-pinky-ring-in-sterling-silver-r14124-ss.pdp.html?swatchCode=R14124%20SSZZZ"
+	},
+	images: {
+		802: "https://persad-portfolio.s3.amazonaws.com/802.jpg",
+		Anne: "https://persad-portfolio.s3.amazonaws.com/Anne.png",
+		bodhi: "https://persad-portfolio.s3.amazonaws.com/bodhi.png",
+		bose: "https://persad-portfolio.s3.amazonaws.com/bose.gif",
+		chrome: "https://persad-portfolio.s3.amazonaws.com/chrome.png",
+		davidYurman: "https://persad-portfolio.s3.amazonaws.com/davidYurman.gif",
+		desktop: "https://persad-portfolio.s3.amazonaws.com/desktop.png",
+		floral: "https://persad-portfolio.s3.amazonaws.com/floral.jpg",
+		geometric_blue: "https://persad-portfolio.s3.amazonaws.com/geometric_blue.jpg",
+		geometric_green: "https://persad-portfolio.s3.amazonaws.com/geometric_green.jpg",
+		geometric_orange: "https://persad-portfolio.s3.amazonaws.com/geometric_orange.jpg",
+		geometric_pink: "https://persad-portfolio.s3.amazonaws.com/geometric_pink.jpg",
+		geometric_purple: "https://persad-portfolio.s3.amazonaws.com/geometric_purple.jpg",
+		geometric_red: "https://persad-portfolio.s3.amazonaws.com/geometric_red.jpg",
+		gulp: "https://persad-portfolio.s3.amazonaws.com/gulp.gif",
+		Harsha: "https://persad-portfolio.s3.amazonaws.com/Harsha.png",
+		legos: "https://persad-portfolio.s3.amazonaws.com/legos.gif",
+		portfolio: "https://persad-portfolio.s3.amazonaws.com/portfolio.gif",
+		wedding: "https://persad-portfolio.s3.amazonaws.com/wedding.gif"
 	}
 };
 

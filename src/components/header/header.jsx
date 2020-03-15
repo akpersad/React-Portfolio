@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactGA from "react-ga";
 import { hasClass, toggleClass } from "../../global/_util";
 
-import Logo from "../../images/logo.svg";
+import Logo from "../../svg/logo.svg";
 import { loadSvg } from "../../global/_importSVG";
 
 class Header extends Component {
