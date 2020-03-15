@@ -706,6 +706,15 @@
     stroke: var(--color-primary);
 }
 
+#header-icon {
+    cirle {
+        fill: var(--color-primary);
+    }
+    rect {
+        fill: var(--color-contrast-higher);
+    }
+}
+
 // Mobile Styles
 @include breakpoint(sm-only) {
     .main-header__nav {

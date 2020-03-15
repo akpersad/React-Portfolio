@@ -3,6 +3,7 @@ import ReactGA from "react-ga";
 import { hasClass, toggleClass } from "../../global/_util";
 
 import Logo from "../../svg/logo.svg";
+import HeaderIcon from "../../svg/header-icon.svg";
 import { loadSvg } from "../../global/_importSVG";
 
 class Header extends Component {
@@ -25,6 +26,7 @@ class Header extends Component {
 		this.navTop = navTop;
 
 		loadSvg("#logo-comp");
+		loadSvg("#header-icon");
 		const lightSwitch = document.querySelector("#lightSwitch");
 		const mainHeader = document.querySelector(".js-main-header");
 		// Theme switch
@@ -129,22 +131,7 @@ class Header extends Component {
 							<img id="logo-comp" src={Logo} alt="Logo" />
 							<div className="main-header__logo">
 								<div className="logo-link">
-									<svg width="130" height="32" viewBox="0 0 130 32">
-										<title>Go to homepage</title>
-										<circle
-											fill="var(--color-primary)"
-											cx="16"
-											cy="16"
-											r="16"
-										/>
-										<rect
-											fill="var(--color-contrast-higher)"
-											x="41"
-											y="11"
-											width="89"
-											height="10"
-										/>
-									</svg>
+									<img id="header-icon" src={HeaderIcon} alt="Header Icon" />
 								</div>
 							</div>
 
