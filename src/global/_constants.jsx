@@ -29,6 +29,27 @@ const constants = {
 			"https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html#v=qc35_ii_black",
 		davidYurman:
 			"https://www.davidyurman.com/products/womens/womens-rings/engravable-pinky-ring-in-sterling-silver-r14124-ss.pdp.html?swatchCode=R14124%20SSZZZ"
+	},
+	images: {
+		802: "",
+		Anne: "",
+		bodhi: "",
+		bose: "",
+		chrome: "",
+		davidYurman: "",
+		desktop: "",
+		floral: "",
+		geometric_blue: "",
+		geometric_green: "",
+		geometric_orange: "",
+		geometric_pink: "",
+		geometric_purple: "",
+		geometric_red: "",
+		gulp: "",
+		Harsha: "",
+		legos: "",
+		portfolio: "",
+		wedding: ""
 	}
 };
 

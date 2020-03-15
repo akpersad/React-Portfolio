@@ -6,7 +6,7 @@ import Favicon from "react-favicon";
 import ReactGA from "react-ga";
 import { getIP } from "./global/_getIP";
 
-import FaviconImage from "./images/logo.svg";
+import FaviconImage from "./svg/logo.svg";
 
 import Header from "./components/header/header";
 import MainComp from "./components/welcome-component/welcome-component";

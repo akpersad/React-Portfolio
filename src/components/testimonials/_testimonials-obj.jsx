@@ -1,6 +1,6 @@
 import Bodhi from "../../images/bodhi.png";
-import Anne from "../../images/girl.svg";
-import Harsha from "../../images/boy.svg";
+import Anne from "../../svg/girl.svg";
+import Harsha from "../../svg/boy.svg";
 
 const testimonials = [
 	{
