@@ -3,13 +3,28 @@ import ReactGA from "react-ga";
 import { hasClass, toggleClass } from "../../global/_util";
 
 import Logo from "../../svg/logo.svg";
+import HeaderIcon from "../../svg/header-icon.svg";
 import { loadSvg } from "../../global/_importSVG";
 
 class Header extends Component {
 	constructor() {
 		super();
 		this.state = {
-			showModalMenu: false
+			showModalMenu: false,
+			menuItems: [
+				{
+					scrollItem: "section_about-me",
+					title: "About Me"
+				},
+				{
+					scrollItem: "section_projects",
+					title: "Projects"
+				},
+				{
+					scrollItem: "section_testimonials",
+					title: "Testimonials"
+				}
+			]
 		};
 	}
 
@@ -25,6 +40,7 @@ class Header extends Component {
 		this.navTop = navTop;
 
 		loadSvg("#logo-comp");
+		loadSvg("#header-icon");
 		const lightSwitch = document.querySelector("#lightSwitch");
 		const mainHeader = document.querySelector(".js-main-header");
 		// Theme switch
@@ -119,32 +135,35 @@ class Header extends Component {
 		toggleClass(menuItem, "nav-item_display-web-only", showModalMenu);
 	}
 
+	renderHeaderItems() {
+		const { menuItems } = this.state;
+
+		return menuItems.map(item => {
+			return (
+				<li className="main-header__nav-item">
+					<button
+						data-scrollto={item.scrollItem}
+						className="main-header__nav-link"
+						type="button"
+						onClick={this.scrollToElement.bind(this)}
+					>
+						{item.title}
+					</button>
+				</li>
+			);
+		});
+	}
+
 	render() {
 		return (
 			<div className="main-header-container">
-				{/* Enter component html here */}
 				<header className="main-header js-main-header margin-top--sm margin-bottom--lg">
 					<div className="container container--lg">
 						<div className="main-header__layout d-flex flex-wrap justify-content-between">
 							<img id="logo-comp" src={Logo} alt="Logo" />
 							<div className="main-header__logo">
 								<div className="logo-link">
-									<svg width="130" height="32" viewBox="0 0 130 32">
-										<title>Go to homepage</title>
-										<circle
-											fill="var(--color-primary)"
-											cx="16"
-											cy="16"
-											r="16"
-										/>
-										<rect
-											fill="var(--color-contrast-higher)"
-											x="41"
-											y="11"
-											width="89"
-											height="10"
-										/>
-									</svg>
+									<img id="header-icon" src={HeaderIcon} alt="Header Icon" />
 								</div>
 							</div>
 
@@ -170,37 +189,8 @@ class Header extends Component {
 									Main menu
 								</div>
 								<ul className="main-header__nav-list nav-item_display-web-only">
-									<li className="main-header__nav-item">
-										<a
-											data-scrollto="section_about-me"
-											href="#0"
-											className="main-header__nav-link"
-											aria-current="page"
-											onClick={this.scrollToElement.bind(this)}
-										>
-											About Me
-										</a>
-									</li>
-									<li className="main-header__nav-item">
-										<a
-											data-scrollto="section_projects"
-											href="#0"
-											className="main-header__nav-link"
-											onClick={this.scrollToElement.bind(this)}
-										>
-											Projects
-										</a>
-									</li>
-									<li className="main-header__nav-item">
-										<a
-											data-scrollto="section_testimonials"
-											href="#0"
-											className="main-header__nav-link"
-											onClick={this.scrollToElement.bind(this)}
-										>
-											Testimonials
-										</a>
-									</li>
+									{this.renderHeaderItems()}
+
 									<li
 										className="main-header__nav-item main-header__nav-divider"
 										aria-hidden="true"
@@ -242,7 +232,6 @@ class Header extends Component {
 								</ul>
 							</nav>
 						</div>
-						{/* main-header__layout */}
 					</div>
 				</header>
 			</div>

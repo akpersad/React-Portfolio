@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FaTwitter, FaLinkedinIn, FaSalesforce, FaGithub } from "react-icons/fa";
 import ReactGA from "react-ga";
+import axios from "axios";
 
 import constants from "../../global/_constants";
 import SubmitForm from "../submit-form/submit-form";
@@ -10,7 +11,29 @@ class Footer extends Component {
 		super();
 
 		this.state = {
-			quote: ""
+			quote: "",
+			socialLinks: [
+				{
+					href: constants.socialSites.twitter,
+					id: "social_twitter",
+					icon: <FaTwitter size="1.2em" />
+				},
+				{
+					href: constants.socialSites.linkedin,
+					id: "social_linkedin",
+					icon: <FaLinkedinIn size="1.2em" />
+				},
+				{
+					href: constants.socialSites.trailhead,
+					id: "social_salesforce",
+					icon: <FaSalesforce size="1.2em" />
+				},
+				{
+					href: constants.socialSites.github,
+					id: "social_github",
+					icon: <FaGithub size="1.2em" />
+				}
+			]
 		};
 	}
 
@@ -31,19 +54,12 @@ class Footer extends Component {
 	fetchQuote() {
 		const backupQuote = "Only those who dare to fail greatly can ever achieve greatly.";
 		const url = "https://quotes.rest/qod";
-		fetch(url)
+		axios
+			.get(url)
 			.then(results => {
-				results
-					.json()
-					.then(jsonResults => {
-						this.setState({ quote: jsonResults.contents.quotes[0].quote });
-						window.localStorage.setItem("quote", jsonResults.contents.quotes[0].quote);
-						window.localStorage.setItem("quoteDate", new Date());
-					})
-					.catch(err => {
-						console.log(err);
-						this.setState({ quote: backupQuote });
-					});
+				this.setState({ quote: results.data.contents.quotes[0].quote });
+				window.localStorage.setItem("quote", results.data.contents.quotes[0].quote);
+				window.localStorage.setItem("quoteDate", new Date());
 			})
 			.catch(err => {
 				console.log(err);
@@ -56,6 +72,24 @@ class Footer extends Component {
 		ReactGA.event({
 			category: "User",
 			action: linkOut
+		});
+	}
+
+	renderSocialLink() {
+		const { socialLinks } = this.state;
+		return socialLinks.map(item => {
+			return (
+				<a
+					key={item.id}
+					href={item.href}
+					target="_blank"
+					rel="noopener noreferrer"
+					id={item.id}
+					onClick={this.sendEvent.bind(this)}
+				>
+					<div className="social-icons_item mx-sm-5 mx-2">{item.icon}</div>
+				</a>
+			);
 		});
 	}
 
@@ -83,53 +117,7 @@ class Footer extends Component {
 
 					<div className="bottom-item footer-item_bottom mt-5">
 						<div className="social-icons d-flex flex-row flex-wrap justify-content-center mb-4">
-							<a
-								href={constants.socialSites.twitter}
-								target="_blank"
-								rel="noopener noreferrer"
-								id="social_twitter"
-								onClick={this.sendEvent.bind(this)}
-							>
-								<div className="social-icons_item mx-sm-5 mx-2">
-									<FaTwitter size="1.2em" />
-								</div>
-							</a>
-
-							<a
-								href={constants.socialSites.linkedin}
-								target="_blank"
-								rel="noopener noreferrer"
-								id="social_linkedin"
-								onClick={this.sendEvent.bind(this)}
-							>
-								<div className="social-icons_item mx-sm-5 mx-2">
-									<FaLinkedinIn size="1.2em" />
-								</div>
-							</a>
-
-							<a
-								href={constants.socialSites.trailhead}
-								target="_blank"
-								rel="noopener noreferrer"
-								id="social_salesforce"
-								onClick={this.sendEvent.bind(this)}
-							>
-								<div className="social-icons_item mx-sm-5 mx-2">
-									<FaSalesforce size="1.2em" />
-								</div>
-							</a>
-
-							<a
-								href={constants.socialSites.github}
-								target="_blank"
-								rel="noopener noreferrer"
-								id="social_github"
-								onClick={this.sendEvent.bind(this)}
-							>
-								<div className="social-icons_item mx-sm-5 mx-2">
-									<FaGithub size="1.2em" />
-								</div>
-							</a>
+							{this.renderSocialLink()}
 						</div>
 
 						<div className="made-with d-flex flex-column justify-content-center">
