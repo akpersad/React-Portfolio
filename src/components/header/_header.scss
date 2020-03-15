@@ -18,7 +18,7 @@
         border-bottom: 1px solid var(--color-contrast-low);
         z-index: $zindex-main-header;
 
-        a:not(.logo-link) {
+        .main-header__nav-link {
             background: linear-gradient(
                 to top,
                 var(--color-primary),
@@ -31,19 +31,20 @@
             background-size: 100% 40%;
             color: var(--color-opposite);
             display: inline;
-            line-height: 1em;
+            line-height: 1.5em;
             padding: 0;
             position: relative;
             text-decoration: none;
             transition: all 500ms ease;
             z-index: 1;
+            border: none;
             &:hover,
             &:focus {
                 background-size: 100% 100%;
             }
         }
 
-        a.logo-link {
+        .logo-link {
             @include breakpoint(sm-only) {
                 display: none;
             }
@@ -706,6 +707,15 @@
     stroke: var(--color-primary);
 }
 
+#header-icon {
+    cirle {
+        fill: var(--color-primary);
+    }
+    rect {
+        fill: var(--color-contrast-higher);
+    }
+}
+
 // Mobile Styles
 @include breakpoint(sm-only) {
     .main-header__nav {
@@ -743,7 +753,7 @@
     }
     .main-header {
         .btn--mobile_only,
-        a:not(.logo-link) {
+        .main-header__nav-link {
             background: none !important;
             color: var(--color-opposite);
             padding: 0;
