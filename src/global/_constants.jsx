@@ -49,7 +49,7 @@ const constants = {
 		Harsha: "https://persad-portfolio.s3.amazonaws.com/Harsha.png",
 		legos: "https://persad-portfolio.s3.amazonaws.com/legos.gif",
 		portfolio: "https://persad-portfolio.s3.amazonaws.com/portfolio.gif",
-		pokedex: "https://persad-portfolio.s3.amazonaws.com/wedding.gif"
+		pokedex: "https://persad-portfolio.s3.amazonaws.com/pokedex.gif"
 	}
 };
 
