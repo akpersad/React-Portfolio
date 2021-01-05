@@ -3,7 +3,7 @@ const constants = {
 		chromeExtension: "https://github.com/akpersad/insertURL",
 		portfolioGulp: "https://github.com/akpersad/portfolio-new",
 		portfolioReact: "https://github.com/akpersad/React-Portfolio",
-		wedding: "https://github.com/akpersad/wedding-website"
+		pokedex: "https://github.com/akpersad/wedding-website"
 	},
 	socialSites: {
 		twitter: "https://twitter.com/akpersad",
@@ -12,7 +12,7 @@ const constants = {
 		github: "https://github.com/akpersad/"
 	},
 	projectName: {
-		wedding: "Wedding Website",
+		pokedex: "Wedding Website",
 		gulp: "Gulp Build",
 		react: "Portfolio",
 		chrome: "Chrome Extension",
@@ -20,7 +20,7 @@ const constants = {
 		davidYurman: "David Yurman"
 	},
 	projectURLs: {
-		wedding: "https://github.com/akpersad/wedding-website",
+		pokedex: "https://github.com/akpersad/wedding-website",
 		gulp: "https://akpersad.github.io/portfolio-new/",
 		react: "https://en.wikipedia.org/wiki/Recursion_(computer_science)",
 		chrome:
@@ -49,7 +49,7 @@ const constants = {
 		Harsha: "https://persad-portfolio.s3.amazonaws.com/Harsha.png",
 		legos: "https://persad-portfolio.s3.amazonaws.com/legos.gif",
 		portfolio: "https://persad-portfolio.s3.amazonaws.com/portfolio.gif",
-		wedding: "https://persad-portfolio.s3.amazonaws.com/wedding.gif"
+		pokedex: "https://persad-portfolio.s3.amazonaws.com/wedding.gif"
 	}
 };
 

@@ -2,6 +2,23 @@ import constants from "../../global/_constants";
 
 const projects = [
 	{
+		Pokedex: {
+			projectName: constants.projectName.pokedex,
+			projectUrl: constants.projectURLs.pokedex,
+			projectTechs:
+				"React, React Router, Third Party Integrations, Webpack, Babel, SASS/SCSS",
+			projectGithub: constants.githubSites.pokedex,
+			projectDescription:
+				"While exploring websites like Zola and The Knot, I tried to use their templates to build our wedding website. " +
+				"I found myself getting frustrated with their limitations and more than once saying 'I could do this on my own'. " +
+				"So I decided to! While we're in the middle of one of the most stressful planning events of our lives, it's nice to " +
+				"be able to focus on something I enjoy and get it done how I wanted to.",
+			projectScreenShot: constants.images.pokedex,
+			clientWork: false
+		},
+		projectImage: constants.images.geometric_blue
+	},
+	{
 		Bose: {
 			projectName: constants.projectName.bose,
 			projectUrl: constants.projectURLs.bose,
@@ -76,23 +93,6 @@ const projects = [
 			clientWork: false
 		},
 		projectImage: constants.images.geometric_red
-	},
-	{
-		"Wedding Website": {
-			projectName: constants.projectName.wedding,
-			projectUrl: constants.projectURLs.wedding,
-			projectTechs:
-				"React, React Router, Third Party Integrations, Webpack, Babel, SASS/SCSS",
-			projectGithub: constants.githubSites.wedding,
-			projectDescription:
-				"While exploring websites like Zola and The Knot, I tried to use their templates to build our wedding website. " +
-				"I found myself getting frustrated with their limitations and more than once saying 'I could do this on my own'. " +
-				"So I decided to! While we're in the middle of one of the most stressful planning events of our lives, it's nice to " +
-				"be able to focus on something I enjoy and get it done how I wanted to.",
-			projectScreenShot: constants.images.wedding,
-			clientWork: false
-		},
-		projectImage: constants.images.geometric_blue
 	}
 ];
 
